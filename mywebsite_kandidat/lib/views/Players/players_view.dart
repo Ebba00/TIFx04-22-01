@@ -13,7 +13,7 @@ class PlayersView extends StatelessWidget {
         children: <Widget> [
           Container(
             height: 300,
-            width: 300,
+            width: 580,
             decoration: BoxDecoration(color: Colors.grey[100],),
             child: Image.asset('FloorballField.png'),
           ),
