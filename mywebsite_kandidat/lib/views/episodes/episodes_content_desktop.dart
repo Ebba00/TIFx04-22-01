@@ -11,7 +11,7 @@ import '../../widgets/episodes_details/episodes_heatmap.dart';
 var names = [
   'Hannes Gustafsson',
   'Ebba Molinder',
-  'Oscar Kullner',
+  'Oskar Kullner',
 ];
 
 var games = [
@@ -39,8 +39,8 @@ var oscarDistance = [50,51,52];
 var distance = [hannesDistance,ebbaDistance,oscarDistance];
 
 var hannesHeatmaps = ['assets/heatmap.jpg','assets/heatmap.jpg','assets/heatmap.jpg'];
-var ebbaHeatmaps = [40,41,42];
-var oscarHeatmaps = [50,51,52];
+var ebbaHeatmaps = ['assets/heatmap.jpg','assets/heatmap.jpg','assets/heatmap.jpg'];
+var oscarHeatmaps = ['assets/heatmap.jpg','assets/heatmap.jpg','assets/heatmap.jpg'];
 
 var heatmaps = [hannesHeatmaps,ebbaHeatmaps,oscarHeatmaps];
 
@@ -56,7 +56,8 @@ class Parent extends StatefulWidget {
 class EpisodesContentDesktop extends State<Parent> {
   String selectedName = names[0];
   String selectedGame = games[0];
-  int selectedSpeed = speed[0][1];
+  int selectedSpeed = speed[0][0];
+  String selectedHeatmap = heatmaps[0][0];
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +66,7 @@ class EpisodesContentDesktop extends State<Parent> {
       children: <Widget>[
       SizedBox(
       width: 350,
-      child: Image.asset('assets/heatmap.jpg'),
+      child: Image.asset(heatmaps[names.indexOf(selectedName)][games.indexOf(selectedGame)],),
       ),
         Expanded(child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -74,7 +75,7 @@ class EpisodesContentDesktop extends State<Parent> {
             const SizedBox(height: 45,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children:  <Widget>[
+              children: <Widget>[
               Container(
                 margin: const EdgeInsets.all(30.0),
                 padding: const EdgeInsets.all(10.0),
