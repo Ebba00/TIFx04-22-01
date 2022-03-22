@@ -13,7 +13,7 @@ class LogInView extends StatelessWidget {
         child: Container(
           height: 400,
           width: 400,
-          child: const NavBarItem('Spelare', PlayersRoute),
+          child: const NavBarItem('Logga in', PlayersRoute),
         ),
         ),
 

@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:mywebsite_kandidat/routing/route_names.dart';
 import 'package:mywebsite_kandidat/views/home/home_view.dart';
 import '../views/Players/players_view.dart';
+import '../views/Players/stats_view.dart';
 import '../views/about/about_view.dart';
 import '../views/episodes/episodes_view.dart';
 import '../views/login/log_in_view.dart';
@@ -23,6 +24,8 @@ Route<dynamic>? generateRoute(RouteSettings settings) {
       return _getPageRoute(const LogInView());
     case PlayersRoute:
       return _getPageRoute(const PlayersView());
+    case StatsRoute:
+      return _getPageRoute(const StatsView());
     default:
   }
   return null;
