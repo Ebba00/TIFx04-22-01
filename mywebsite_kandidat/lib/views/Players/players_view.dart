@@ -30,15 +30,19 @@ class PlayersView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
-          height: 400,
-          width: 400,
-          child: const NavBarItem('Denna sida är för alla spelare', StatsRoute),
+    return Align(
+      alignment: Alignment.center,
+      child:
+        Container(
+              height: 400,
+              width: 400,
+              decoration: BoxDecoration(
+                color: Colors.grey[50],
+                borderRadius: BorderRadius.circular(10),
+              ),
+              alignment: Alignment.center,
+              child: const NavBarItem('LÄNK TILL STATS_VIEW', StatsRoute),
         ),
-      ),
-
     );
   }
 }

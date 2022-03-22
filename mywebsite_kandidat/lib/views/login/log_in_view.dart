@@ -39,6 +39,7 @@ class LogInView extends StatelessWidget {
                       SizedBox(
                         height: 10,
                       ),
+                      NavBarItem('LÄNK TILL PLAYERS_VIEW', PlayersRoute),
                     ],
                   ),
                 ),
