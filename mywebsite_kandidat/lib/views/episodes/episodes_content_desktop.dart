@@ -38,6 +38,12 @@ var oscarDistance = [50,51,52];
 
 var distance = [hannesDistance,ebbaDistance,oscarDistance];
 
+var hannesHeatmaps = ['assets/heatmap.jpg','assets/heatmap.jpg','assets/heatmap.jpg'];
+var ebbaHeatmaps = [40,41,42];
+var oscarHeatmaps = [50,51,52];
+
+var heatmaps = [hannesHeatmaps,ebbaHeatmaps,oscarHeatmaps];
+
 class Parent extends StatefulWidget {
   const Parent({Key? key}) : super(key: key);
 
