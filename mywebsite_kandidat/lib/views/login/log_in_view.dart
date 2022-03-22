@@ -8,12 +8,18 @@ class LogInView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: const <Widget> [
-            NavBarItem('Spelare', PlayersRoute),
-          ],
-        );
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Container(
+          height: 400,
+          width: 400,
+          child: const NavBarItem('Spelare', PlayersRoute),
+        ),
+        ),
+
+      );
+
+
+
   }
 }

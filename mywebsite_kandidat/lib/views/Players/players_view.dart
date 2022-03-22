@@ -12,9 +12,10 @@ class PlayersView extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget> [
           Container(
-            height: 60,
-            width: 60,
+            height: 300,
+            width: 300,
             decoration: BoxDecoration(color: Colors.grey[100],),
+            child: Image.asset('FloorballField.png'),
           ),
         ],
       );
