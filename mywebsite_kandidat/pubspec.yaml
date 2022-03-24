@@ -37,6 +37,7 @@ dependencies:
   responsive_builder: ^0.4.2
   font_awesome_flutter: ^8.8.1
   get_it:
+  stacked: ^2.3.0
 
 dev_dependencies:
   flutter_test:
