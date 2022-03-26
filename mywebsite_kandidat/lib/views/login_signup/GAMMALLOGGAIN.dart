@@ -3,6 +3,7 @@ import 'package:mywebsite_kandidat/widgets/login_button/login_button.dart';
 import 'package:mywebsite_kandidat/widgets/navigation_bar/navbar_item.dart';
 import '../../routing/route_names.dart';
 import '../../widgets/navigation_bar/navbar_logo.dart';
+import '../Players/players_view.dart';
 
 var mailMessages = [
   'Ange mailadress',
@@ -38,6 +39,8 @@ class LogInView extends StatefulWidget {
 
 class LogInViewState extends State {
   bool _isObscure = true;
+  final myControllerMail = TextEditingController();
+  final myControllerPassword = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -79,13 +82,7 @@ class LogInViewState extends State {
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: TextField(
-                          onChanged: (text) {
-                            if (text == 'kandidat') {
-                              mailValue = true; }
-                            else {
-                              mailValue = false;
-                            }
-                          },
+                          controller: myControllerMail,
                           decoration: const InputDecoration(
                             hintText: 'Ange mailadress',
                             border: OutlineInputBorder(),
@@ -103,13 +100,7 @@ class LogInViewState extends State {
                         ),
                         child: TextField(
                           obscureText: _isObscure,
-                          onChanged: (text) {
-                            if (text == 'kandidat') {
-                              losenValue = true; }
-                            else {
-                              losenValue = false;
-                            }
-                          },
+                          controller: myControllerPassword,
                           decoration: InputDecoration(
                               hintText: 'Ange lösenord',
                               border: const OutlineInputBorder(),
@@ -126,17 +117,37 @@ class LogInViewState extends State {
                       const SizedBox(
                         height: 30,
                       ),
-                      Container(
+                      SizedBox(
                         height: 40,
                         width: 200,
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 31, 229, 146),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: (losenValue == true && mailValue == true)
-                            ? const LoginButton('LOGGA IN', PlayersRoute)
-                            : const LoginButton('LOGGA IN', LogInRoute),
+                        child:
+                          ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                            primary: const Color.fromARGB(255, 31, 229, 146), // background
+                            onPrimary: const Color.fromARGB(255, 31, 229, 146), // foreground
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                            child: const Text(
+                              'LOGGA IN',
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w800,
+                                color: Colors.white,
+                              ),
+                            ),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) =>
+                                (myControllerMail.text == 'kandidat' && myControllerPassword.text == 'kandidat')
+                                ? const PlayersView()
+                                : LogInView()
+                                ),
+                              );
+                            },
+                          ),
                       ),
                     ],
                   ),
