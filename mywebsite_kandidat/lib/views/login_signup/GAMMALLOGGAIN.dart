@@ -4,10 +4,34 @@ import 'package:mywebsite_kandidat/widgets/navigation_bar/navbar_item.dart';
 import '../../routing/route_names.dart';
 import '../../widgets/navigation_bar/navbar_logo.dart';
 
+var mailMessages = [
+  'Ange mailadress',
+  'Fel mailadress/lösenord',
+];
+
+var losenMessages = [
+  'Ange lösenord',
+  'Fel mailadress/lösenord',
+];
+
+var mailadresser = [
+  'kandidat',
+];
+
+var losenord = [
+  'kandidat',
+];
+
+bool mailValue = false;
+bool losenValue = false;
+
+var textValues = [
+  mailValue,
+  losenValue,
+];
 
 
 class LogInView extends StatefulWidget {
-
 
   @override
   State createState() => LogInViewState(); }
@@ -54,8 +78,15 @@ class LogInViewState extends State {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: const TextField(
-                          decoration: InputDecoration(
+                        child: TextField(
+                          onChanged: (text) {
+                            if (text == 'kandidat') {
+                              mailValue = true; }
+                            else {
+                              mailValue = false;
+                            }
+                          },
+                          decoration: const InputDecoration(
                             hintText: 'Ange mailadress',
                             border: OutlineInputBorder(),
                           ),
@@ -72,6 +103,13 @@ class LogInViewState extends State {
                         ),
                         child: TextField(
                           obscureText: _isObscure,
+                          onChanged: (text) {
+                            if (text == 'kandidat') {
+                              losenValue = true; }
+                            else {
+                              losenValue = false;
+                            }
+                          },
                           decoration: InputDecoration(
                               hintText: 'Ange lösenord',
                               border: const OutlineInputBorder(),
@@ -96,7 +134,9 @@ class LogInViewState extends State {
                           color: const Color.fromARGB(255, 31, 229, 146),
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: const LoginButton('LOGGA IN', PlayersRoute),
+                        child: (losenValue == true && mailValue == true)
+                            ? const LoginButton('LOGGA IN', PlayersRoute)
+                            : const LoginButton('LOGGA IN', LogInRoute),
                       ),
                     ],
                   ),
@@ -178,6 +218,19 @@ class LogInViewState extends State {
                                     });
                                   })),
                       ),
+                      ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      Container(
+                        height: 40,
+                        width: 200,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          color: const Color.fromARGB(255, 31, 229, 146),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: const LoginButton('SKAPA KONTO', PlayersRoute),
                       ),
                     ],
                   ),
