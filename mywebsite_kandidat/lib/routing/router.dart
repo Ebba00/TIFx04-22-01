@@ -5,6 +5,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mywebsite_kandidat/routing/route_names.dart';
+import 'package:mywebsite_kandidat/views/HANNES_HEATMAP.dart';
 import 'package:mywebsite_kandidat/views/home/home_view.dart';
 import '../views/Players/players_view.dart';
 import '../views/Players/stats_view.dart';
@@ -27,6 +28,8 @@ Route<dynamic>? generateRoute(RouteSettings settings) {
       return _getPageRoute(const PlayersView());
     case StatsRoute:
       return _getPageRoute(const StatsView());
+    case HannesHeatmapRoute:
+      return _getPageRoute(const HannesHeatmap());
 
     default:
   }
