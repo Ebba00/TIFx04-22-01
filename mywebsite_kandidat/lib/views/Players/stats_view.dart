@@ -16,7 +16,22 @@ class StatsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return
+    return SizedBox(
+      width: 580,
+      height: 300,
+      child: Stack(children: <Widget>[
+        Container(
+          alignment: Alignment.center,
+          color: Colors.white,
+          child: Image.asset('FloorballField.png'),
+        ),
+        const Align(alignment: Alignment.topLeft,
+          child: Text('The matrix'),
+        )
+      ],
+      ),
+    );
+    /*return
       Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget> [
@@ -25,8 +40,8 @@ class StatsView extends StatelessWidget {
             width: 580,
             decoration: BoxDecoration(color: Colors.grey[100],),
             child: Image.asset('FloorballField.png')),
-            Center(child: Text(matrix3.toString())),
+            //Center(child: Text(matrix3.toString())),
           ],
-      );
+      );*/
   }
 }
