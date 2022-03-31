@@ -29,7 +29,7 @@ Route<dynamic>? generateRoute(RouteSettings settings) {
     case StatsRoute:
       return _getPageRoute(const StatsView());
     case HannesHeatmapRoute:
-      return _getPageRoute(const HannesHeatmap());
+      return _getPageRoute(HannesHeatmap());
 
     default:
   }

@@ -143,7 +143,7 @@ class LogInViewState extends State {
                                 context,
                                 MaterialPageRoute(builder: (context) =>
                                 (myControllerMail.text == 'kandidat' && myControllerPassword.text == 'kandidat')
-                                ? const HannesHeatmap()
+                                ? HannesHeatmap()
                                 : LogInView()
                                 ),
                               );
