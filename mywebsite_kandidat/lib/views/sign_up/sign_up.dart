@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mywebsite_kandidat/views/HANNES_HEATMAP.dart';
+import 'package:mywebsite_kandidat/views/hannes_heatmap/HANNES_HEATMAP.dart';
 import 'package:mywebsite_kandidat/widgets/login_button/login_button.dart';
 import 'package:mywebsite_kandidat/widgets/navigation_bar/navbar_item.dart';
 import '../../routing/route_names.dart';
