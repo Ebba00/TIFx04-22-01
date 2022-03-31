@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mywebsite_kandidat/routing/route_names.dart';
+import '../../views/login_signup/GAMMALLOGGAIN.dart';
 import 'navbar_item.dart';
 import 'navbar_logo.dart';
 import 'package:mywebsite_kandidat/services/navigation_service.dart';
@@ -23,6 +24,10 @@ class NavigationBarTabletDesktop extends StatelessWidget {
                 width: 60,
               ),
               NavBarItem('Om oss', AboutRoute),
+              SizedBox(
+                width:60,
+              ),
+              NavBarItem('Logga in', LogInRoute),
             ],
           )
         ],

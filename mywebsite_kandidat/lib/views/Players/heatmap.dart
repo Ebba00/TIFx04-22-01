@@ -15,6 +15,7 @@ List<List<int>> randomMatrix(List<List<int>> matrix){
       }
     }
   }
+  print(matrix);
   return matrix;
 }
 

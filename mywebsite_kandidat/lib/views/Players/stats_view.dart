@@ -9,7 +9,6 @@ final List<List<int>> matrix2 = new List.generate(row, (i) =>
     List.generate(col, (j) => 0));
 final List<List<int>> matrix3 = randomMatrix(matrix2);
 
-
 class StatsView extends StatelessWidget {
   const StatsView({Key? key}) : super(key: key);
 
