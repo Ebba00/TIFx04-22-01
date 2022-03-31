@@ -12,6 +12,7 @@ import '../views/Players/stats_view.dart';
 import '../views/about/about_view.dart';
 import '../views/episodes/episodes_view.dart';
 import '../views/login_signup/GAMMALLOGGAIN.dart';
+import '../views/sign_up/sign_up.dart';
 
 
 Route<dynamic>? generateRoute(RouteSettings settings) {
@@ -23,13 +24,15 @@ Route<dynamic>? generateRoute(RouteSettings settings) {
     case EpisodesRoute:
       return _getPageRoute(const EpisodesView());
     case LogInRoute:
-      return _getPageRoute(LogInView());
+      return _getPageRoute(const LogInView());
     case PlayersRoute:
       return _getPageRoute(const PlayersView());
     case StatsRoute:
       return _getPageRoute(const StatsView());
     case HannesHeatmapRoute:
       return _getPageRoute(HannesHeatmap());
+    case SignUpRoute:
+      return _getPageRoute(const SignUpView());
 
     default:
   }

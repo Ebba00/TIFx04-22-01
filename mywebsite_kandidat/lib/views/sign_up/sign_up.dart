@@ -5,10 +5,11 @@ import 'package:mywebsite_kandidat/widgets/navigation_bar/navbar_item.dart';
 import '../../routing/route_names.dart';
 import '../../widgets/navigation_bar/navbar_logo.dart';
 import '../Players/players_view.dart';
+import '../login_signup/GAMMALLOGGAIN.dart';
 
 
-class LogInView extends StatefulWidget {
-  const LogInView({Key? key}) : super(key: key);
+class SignUpView extends StatefulWidget {
+  const SignUpView({Key? key}) : super(key: key);
 
 
   @override
@@ -98,33 +99,33 @@ class LogInViewState extends State {
                         height: 40,
                         width: 200,
                         child:
-                          ElevatedButton(
-                            style: ElevatedButton.styleFrom(
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
                             primary: const Color.fromARGB(255, 31, 229, 146), // background
                             onPrimary: const Color.fromARGB(255, 31, 229, 146), // foreground
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                              ),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
                             ),
-                            child: const Text(
-                              'LOGGA IN',
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w800,
-                                color: Colors.white,
-                              ),
-                            ),
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) =>
-                                (myControllerMail.text == 'kandidat' && myControllerPassword.text == 'kandidat')
-                                ? HannesHeatmap()
-                                : const LogInView()
-                                ),
-                              );
-                            },
                           ),
+                          child: const Text(
+                            'LOGGA IN',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w800,
+                              color: Colors.white,
+                            ),
+                          ),
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) =>
+                              (myControllerMail.text == 'kandidat' && myControllerPassword.text == 'kandidat')
+                                  ? HannesHeatmap()
+                                  : const LogInView()
+                              ),
+                            );
+                          },
+                        ),
                       ),
                     ],
                   ),
@@ -205,7 +206,7 @@ class LogInViewState extends State {
                                       _isObscure = !_isObscure;
                                     });
                                   })),
-                      ),
+                        ),
                       ),
                       const SizedBox(
                         height: 30,

@@ -8,5 +8,7 @@ const String LoginRoute = 'log_in';
 const String CreateAccountRoute = 'create_account';
 const String AddressSelectionRoute = 'adress_selection';
 const String HannesHeatmapRoute = 'hannes_heatmap';
+const String SignUpRoute = 'sign_up';
+
 
 

@@ -17,10 +17,10 @@ class CallToAction extends StatelessWidget {
         tablet: 850,
         watch: 600,
       ),
-      desktop: const CallToActionTabletDesktop(title: 'LOGGA IN', navigationPath: LogInRoute,),
-        watch: const CallToActionMobile(title: 'Logga in', navigationPath: LogInRoute,),
-        tablet: const CallToActionTabletDesktop(title: 'Logga in', navigationPath: LogInRoute,),
-        mobile: const CallToActionTabletDesktop(title: 'Logga in', navigationPath: LogInRoute,),
+      desktop: const CallToActionTabletDesktop(title: 'Kom igång', navigationPath: SignUpRoute,),
+        watch: const CallToActionMobile(title: 'Kom igång', navigationPath: SignUpRoute,),
+        tablet: const CallToActionTabletDesktop(title: 'Kom igång', navigationPath: SignUpRoute,),
+        mobile: const CallToActionTabletDesktop(title: 'Kom igång', navigationPath: SignUpRoute,),
     );
   }
 }
