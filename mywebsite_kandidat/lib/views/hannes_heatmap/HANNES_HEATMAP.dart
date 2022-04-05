@@ -1,5 +1,7 @@
 
 import 'package:flutter/material.dart';
+import 'columns_heatmap/Column_2.dart';
+import 'columns_heatmap/column_1.dart';
 import 'field_area.dart';
 
 var coordinatesX = [12,24,5,7,3,29,15];
@@ -40,123 +42,8 @@ class HannesHeatmap extends StatelessWidget {
           child:
             Row(
               children: [
-                Column(
-                  children: const [
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.pink,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.red,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                  ],),
-                Column(
-                  children: const [
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                  ],),
-                Column(
-                  children: const [
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                  ],),
-                Column(
-                  children: const [
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                  ],),
-                Column(
-                  children: const [
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                  ],),
-                Column(
-                  children: const [
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                  ],),
-                Column(
-                  children: const [
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                  ],),
-                Column(
-                  children: const [
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                  ],),
-                Column(
-                  children: const [
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                  ],),
+                Column2(),
+                Column1(),
                 Column(
                   children: const [
                     FieldArea(fieldColor: Colors.greenAccent,),
