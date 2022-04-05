@@ -2,7 +2,17 @@
 <module type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/mywebsite_kandidat/RESPONSIVE/responsive_builder-master/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/mywebsite_kandidat/RESPONSIVE/responsive_builder-master/build" />
+      <excludeFolder url="file://$MODULE_DIR$/mywebsite_kandidat/RESPONSIVE/responsive_builder-master/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/mywebsite_kandidat/build" />
+      <excludeFolder url="file://$MODULE_DIR$/mywebsite_kandidat/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/mywebsite_kandidat/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/mywebsite_kandidat/RESPONSIVE/responsive_builder-master/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/mywebsite_kandidat/RESPONSIVE/responsive_builder-master/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/mywebsite_kandidat/RESPONSIVE/responsive_builder-master/example/.dart_tool" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
