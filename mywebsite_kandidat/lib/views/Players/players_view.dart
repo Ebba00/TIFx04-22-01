@@ -9,6 +9,7 @@ class Player{
   var name; // Later added by coach
   var id; // Id it gets when created - connected with a picture?
   var number; // Later added by coach, or updated if found
+  var position; // Added by coach for each player
   var team; // Later added or changed by coach
   var heatMap;  // Created by us
   var highSpeed;  // Created by us
@@ -38,7 +39,95 @@ class PlayersView extends StatelessWidget {
         const SizedBox(height: 45,),
         const Align(
           alignment: Alignment.center,
-          child: Text('Välj en spelare!',
+          child: Text('Lägg till en spelare i ditt lag',
+            style: TextStyle(
+              fontWeight: FontWeight.w800,
+              fontSize: 30,
+              color: Colors.black,
+            ),),),
+        SizedBox(height: 30,),
+    Row(
+    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    mainAxisSize: MainAxisSize.max,
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+        Container(
+          width: 275,
+          height: 50,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: TextField(
+           // controller: myControllerMail,
+            decoration: const InputDecoration(
+              hintText: 'Ange namn på spelaren',
+              border: OutlineInputBorder(),
+            ),
+          ),
+        ),
+        SizedBox(height: 15,),
+        Container(
+          width: 275,
+          height: 50,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: TextField(
+         //   controller: myControllerMail,
+            decoration: const InputDecoration(
+              hintText: 'Ange spelarnummer',
+              border: OutlineInputBorder(),
+            ),
+          ),
+        ),
+        SizedBox(height: 15,),
+        Container(
+          width: 275,
+          height: 50,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: TextField( // borde vara rullista
+            //   controller: myControllerMail,
+            decoration: const InputDecoration(
+              hintText: 'Ange spelarens position',
+              border: OutlineInputBorder(),
+            ),
+          ),
+        ),
+        ],
+    ),
+        SizedBox(height: 15,),
+        SizedBox(
+          height: 40,
+          width: 200,
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              primary: const Color.fromARGB(255, 31, 229, 146), // background
+              onPrimary: const Color.fromARGB(255, 31, 229, 146), // foreground
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+            ),
+            child: const Text(
+
+              'LÄGG TILL',
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w800,
+                color: Colors.white,
+              ),
+            ),
+            onPressed: () {
+
+              // lägg till spelare i teamet och spelarlista
+            },
+         ),
+        ),
+
+        const Align(
+          alignment: Alignment.center,
+          child: Text('MITT LAG',
             style: TextStyle(
               fontWeight: FontWeight.w800,
               fontSize: 30,
@@ -47,7 +136,7 @@ class PlayersView extends StatelessWidget {
         const SizedBox(height: 15,),
         const Align(
           alignment: Alignment.center,
-          child: Text('Klicka på en spelare för att ta del av dennes data från föregående matcher.',
+          child: Text('Klicka på en spelare för att ta se data från deras spelade matcher.',
             style: TextStyle(
               fontWeight: FontWeight.w400,
               fontSize: 15,
@@ -65,49 +154,49 @@ class PlayersView extends StatelessWidget {
               children: const [
                 PlayerButton( title: 'Hannes Gustafsson', navigationPath: HannesGRoute,),
                 SizedBox(height: 30,),
-                PlayerButton( title: 'Hannes Gustafsson', navigationPath: HannesGRoute,),
+                PlayerButton( title: 'Gustav Hannesson', navigationPath: HannesGRoute,),
                 SizedBox(height: 30,),
-                PlayerButton( title: 'Hannes Gustafsson', navigationPath: HannesGRoute,),
+                PlayerButton( title: 'Oskar Kullner', navigationPath: HannesGRoute,),
               ],),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: const [
-                PlayerButton( title: 'Hannes Gustafsson', navigationPath: HannesGRoute,),
+                PlayerButton( title: 'Victor Salomonsson', navigationPath: HannesGRoute,),
                 SizedBox(height: 30,),
-                PlayerButton( title: 'Hannes Gustafsson', navigationPath: HannesGRoute,),
+                PlayerButton( title: 'Pontus Johansson', navigationPath: HannesGRoute,),
                 SizedBox(height: 30,),
-                PlayerButton( title: 'Hannes Gustafsson', navigationPath: HannesGRoute,),
+                PlayerButton( title: 'Hamza Jašarević', navigationPath: HannesGRoute,),
               ],),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: const [
-                PlayerButton( title: 'Hannes Gustafsson', navigationPath: HannesGRoute,),
+                PlayerButton( title: 'Ebba Molinder', navigationPath: HannesGRoute,),
                 SizedBox(height: 30,),
-                PlayerButton( title: 'Hannes Gustafsson', navigationPath: HannesGRoute,),
+                PlayerButton( title: 'Pontus Salomonsson', navigationPath: HannesGRoute,),
                 SizedBox(height: 30,),
-                PlayerButton( title: 'Hannes Gustafsson', navigationPath: HannesGRoute,),
+                PlayerButton( title: 'Oskar Gustafsson', navigationPath: HannesGRoute,),
               ],),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: const [
-                PlayerButton( title: 'Hannes Gustafsson', navigationPath: HannesGRoute,),
+                PlayerButton( title: 'Hamza Kullner', navigationPath: HannesGRoute,),
                 SizedBox(height: 30,),
-                PlayerButton( title: 'Hannes Gustafsson', navigationPath: HannesGRoute,),
+                PlayerButton( title: 'Pontus Molinder', navigationPath: HannesGRoute,),
                 SizedBox(height: 30,),
-                PlayerButton( title: 'Hannes Gustafsson', navigationPath: HannesGRoute,),
+                PlayerButton( title: 'Hannes Jašarević', navigationPath: HannesGRoute,),
               ],),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: const [
-                PlayerButton( title: 'Hannes Gustafsson', navigationPath: HannesGRoute,),
+                PlayerButton( title: 'Victor Johansson', navigationPath: HannesGRoute,),
                 SizedBox(height: 30,),
-                PlayerButton( title: 'Hannes Gustafsson', navigationPath: HannesGRoute,),
+                PlayerButton( title: 'Ebba Johansson', navigationPath: HannesGRoute,),
                 SizedBox(height: 30,),
-                PlayerButton( title: 'Hannes Gustafsson', navigationPath: HannesGRoute,),
+                PlayerButton( title: 'Oskar Salomonsson', navigationPath: HannesGRoute,),
               ],),
           ],
         ),
