@@ -2,13 +2,11 @@
 import 'package:flutter/material.dart';
 import '../field_area.dart';
 
-var coordinatesX = [45, 42];
-var coordinatesY = [93, 112];
-
 class Column1 extends StatelessWidget {
-  Column1({Key? key}) : super(key: key);
+  Column1({Key? key, required this.coordinatesX, required this.coordinatesY}) : super(key: key);
 
-  var lengthCoordinates = coordinatesX.length;
+  final coordinatesX;
+  final coordinatesY;
 
   var section11 = 0;
   var section12 = 0;
@@ -46,6 +44,8 @@ class Column1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    var lengthCoordinates = coordinatesX.length;
 
     var sectionPercentages = [
       section11Percent, section12Percent, section13Percent, section14Percent, section15Percent,
@@ -103,18 +103,18 @@ class Column1 extends StatelessWidget {
       }
     }
 
-    section11Percent = (section11 / lengthCoordinates);
-    section12Percent = (section12 / lengthCoordinates);
-    section13Percent = (section13 / lengthCoordinates);
-    section14Percent = (section14 / lengthCoordinates);
-    section15Percent = (section15 / lengthCoordinates);
-    section16Percent = (section16 / lengthCoordinates);
-    section17Percent = (section17 / lengthCoordinates);
-    section18Percent = (section18 / lengthCoordinates);
-    section19Percent = (section19 / lengthCoordinates);
-    section110Percent = (section110 / lengthCoordinates);
+    sectionPercentages[0] = (section11 / lengthCoordinates);
+    sectionPercentages[1] = (section12 / lengthCoordinates);
+    sectionPercentages[2] = (section13 / lengthCoordinates);
+    sectionPercentages[3] = (section14 / lengthCoordinates);
+    sectionPercentages[4] = (section15 / lengthCoordinates);
+    sectionPercentages[5] = (section16 / lengthCoordinates);
+    sectionPercentages[6] = (section17 / lengthCoordinates);
+    sectionPercentages[7] = (section18 / lengthCoordinates);
+    sectionPercentages[8] = (section19 / lengthCoordinates);
+    sectionPercentages[9] = (section110 / lengthCoordinates);
 
-    while (j<= 10) {
+    while (j < 10) {
       if (sectionPercentages[j] > 0 && sectionPercentages[j] <= 0.10) {
         sectionColors[j] = const Color.fromRGBO(214, 223, 238, 1.0);
       j++;}
@@ -173,6 +173,7 @@ class Column1 extends StatelessWidget {
 
     return Column(
       children: [
+        FieldArea(fieldColor: sectionColors[0],),
         FieldArea(fieldColor: sectionColors[1],),
         FieldArea(fieldColor: sectionColors[2],),
         FieldArea(fieldColor: sectionColors[3],),
@@ -182,7 +183,6 @@ class Column1 extends StatelessWidget {
         FieldArea(fieldColor: sectionColors[7],),
         FieldArea(fieldColor: sectionColors[8],),
         FieldArea(fieldColor: sectionColors[9],),
-        FieldArea(fieldColor: sectionColors[10],),
       ],);
   }
 }

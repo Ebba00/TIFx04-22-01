@@ -2,42 +2,42 @@
 import 'package:flutter/material.dart';
 import '../field_area.dart';
 
-class Column2 extends StatelessWidget {
-  Column2({Key? key, required this.coordinatesX, required this.coordinatesY}) : super(key: key);
+class Column8 extends StatelessWidget {
+  Column8({Key? key, required this.coordinatesX, required this.coordinatesY}) : super(key: key);
 
   final coordinatesX;
   final coordinatesY;
 
-  var section21 = 0;
-  var section22 = 0;
-  var section23 = 0;
-  var section24 = 0;
-  var section25 = 0;
-  var section26 = 0;
-  var section27 = 0;
-  var section28 = 0;
-  var section29 = 0;
-  var section210 = 0;
-  var section21Percent = 0.0;
-  var section22Percent = 0.0;
-  var section23Percent = 0.0;
-  var section24Percent = 0.0;
-  var section25Percent = 0.0;
-  var section26Percent = 0.0;
-  var section27Percent = 0.0;
-  var section28Percent = 0.0;
-  var section29Percent = 0.0;
-  var section210Percent = 0.0;
-  Color section21Color = Colors.white;
-  Color section22Color = Colors.white;
-  Color section23Color = Colors.white;
-  Color section24Color = Colors.white;
-  Color section25Color = Colors.white;
-  Color section26Color = Colors.white;
-  Color section27Color = Colors.white;
-  Color section28Color = Colors.white;
-  Color section29Color = Colors.white;
-  Color section210Color = Colors.white;
+  var section81 = 0;
+  var section82 = 0;
+  var section83 = 0;
+  var section84 = 0;
+  var section85 = 0;
+  var section86 = 0;
+  var section87 = 0;
+  var section88 = 0;
+  var section89 = 0;
+  var section810 = 0;
+  var section81Percent = 0.0;
+  var section82Percent = 0.0;
+  var section83Percent = 0.0;
+  var section84Percent = 0.0;
+  var section85Percent = 0.0;
+  var section86Percent = 0.0;
+  var section87Percent = 0.0;
+  var section88Percent = 0.0;
+  var section89Percent = 0.0;
+  var section810Percent = 0.0;
+  Color section81Color = Colors.white;
+  Color section82Color = Colors.white;
+  Color section83Color = Colors.white;
+  Color section84Color = Colors.white;
+  Color section85Color = Colors.white;
+  Color section86Color = Colors.white;
+  Color section87Color = Colors.white;
+  Color section88Color = Colors.white;
+  Color section89Color = Colors.white;
+  Color section810Color = Colors.white;
 
   var i = 0;
   var j = 0;
@@ -48,54 +48,54 @@ class Column2 extends StatelessWidget {
     var lengthCoordinates = coordinatesX.length;
 
     var sectionPercentages = [
-      section21Percent, section22Percent, section23Percent, section24Percent, section25Percent,
-      section26Percent, section27Percent, section28Percent, section29Percent, section210Percent,
+      section81Percent, section82Percent, section83Percent, section84Percent, section85Percent,
+      section86Percent, section87Percent, section88Percent, section89Percent, section810Percent,
     ];
 
     var sectionColors = [
-      section21Color, section22Color, section23Color, section24Color, section25Color,
-      section26Color, section27Color, section28Color, section29Color, section210Color,
+      section81Color, section82Color, section83Color, section84Color, section85Color,
+      section86Color, section87Color, section88Color, section89Color, section810Color,
     ];
 
     while (i < lengthCoordinates) {
-      if ((coordinatesX[i] > 40 && coordinatesX[i] <= 80) && (coordinatesY[i] > 0 && coordinatesY[i] <= 20)) {
-        section21++;
+      if ((coordinatesX[i] > 280 && coordinatesX[i] <= 320) && (coordinatesY[i] > 0 && coordinatesY[i] <= 20)) {
+        section81++;
         i++;
       }
-      else if ((coordinatesX[i] > 40 && coordinatesX[i] <= 80) && (coordinatesY[i] > 20 && coordinatesY[i] <= 40)) {
-        section22++;
+      else if ((coordinatesX[i] > 280 && coordinatesX[i] <= 320) && (coordinatesY[i] > 20 && coordinatesY[i] <= 40)) {
+        section82++;
         i++;
       }
-      else if ((coordinatesX[i] > 40 && coordinatesX[i] <= 80) && (coordinatesY[i] > 40 && coordinatesY[i] <= 60)) {
-        section23++;
+      else if ((coordinatesX[i] > 280 && coordinatesX[i] <= 320) && (coordinatesY[i] > 40 && coordinatesY[i] <= 60)) {
+        section83++;
         i++;
       }
-      else if ((coordinatesX[i] > 40 && coordinatesX[i] <= 80) && (coordinatesY[i] > 60 && coordinatesY[i] <= 80)) {
-        section24++;
+      else if ((coordinatesX[i] > 280 && coordinatesX[i] <= 320) && (coordinatesY[i] > 60 && coordinatesY[i] <= 80)) {
+        section84++;
         i++;
       }
-      else if ((coordinatesX[i] > 40 && coordinatesX[i] <= 80) && (coordinatesY[i] > 80 && coordinatesY[i] <= 100)) {
-        section25++;
+      else if ((coordinatesX[i] > 280 && coordinatesX[i] <= 320) && (coordinatesY[i] > 80 && coordinatesY[i] <= 100)) {
+        section85++;
         i++;
       }
-      else if ((coordinatesX[i] > 40 && coordinatesX[i] <= 80) && (coordinatesY[i] > 100 && coordinatesY[i] <= 120)) {
-        section26++;
+      else if ((coordinatesX[i] > 280 && coordinatesX[i] <= 320) && (coordinatesY[i] > 100 && coordinatesY[i] <= 120)) {
+        section86++;
         i++;
       }
-      else if ((coordinatesX[i] > 40 && coordinatesX[i] <= 80) && (coordinatesY[i] > 120 && coordinatesY[i] <= 140)) {
-        section27++;
+      else if ((coordinatesX[i] > 280 && coordinatesX[i] <= 320) && (coordinatesY[i] > 120 && coordinatesY[i] <= 140)) {
+        section87++;
         i++;
       }
-      else if ((coordinatesX[i] > 40 && coordinatesX[i] <= 80) && (coordinatesY[i] > 140 && coordinatesY[i] <= 160)) {
-        section28++;
+      else if ((coordinatesX[i] > 280 && coordinatesX[i] <= 320) && (coordinatesY[i] > 140 && coordinatesY[i] <= 160)) {
+        section88++;
         i++;
       }
-      else if ((coordinatesX[i] > 40 && coordinatesX[i] <= 80) && (coordinatesY[i] > 160 && coordinatesY[i] <= 180)) {
-        section29++;
+      else if ((coordinatesX[i] > 280 && coordinatesX[i] <= 320) && (coordinatesY[i] > 160 && coordinatesY[i] <= 180)) {
+        section89++;
         i++;
       }
-      else if ((coordinatesX[i] > 40 && coordinatesX[i] <= 80) && (coordinatesY[i] > 180 && coordinatesY[i] <= 200)) {
-        section210++;
+      else if ((coordinatesX[i] > 280 && coordinatesX[i] <= 320) && (coordinatesY[i] > 180 && coordinatesY[i] <= 200)) {
+        section810++;
         i++;
       }
       else{
@@ -103,16 +103,16 @@ class Column2 extends StatelessWidget {
       }
     }
 
-    sectionPercentages[0] = (section21 / lengthCoordinates);
-    sectionPercentages[1] = (section22 / lengthCoordinates);
-    sectionPercentages[2] = (section23 / lengthCoordinates);
-    sectionPercentages[3] = (section24 / lengthCoordinates);
-    sectionPercentages[4] = (section25 / lengthCoordinates);
-    sectionPercentages[5] = (section26 / lengthCoordinates);
-    sectionPercentages[6] = (section27 / lengthCoordinates);
-    sectionPercentages[7] = (section28 / lengthCoordinates);
-    sectionPercentages[8] = (section29 / lengthCoordinates);
-    sectionPercentages[9] = (section210 / lengthCoordinates);
+    sectionPercentages[0] = (section81 / lengthCoordinates);
+    sectionPercentages[1] = (section82 / lengthCoordinates);
+    sectionPercentages[2] = (section83 / lengthCoordinates);
+    sectionPercentages[3] = (section84 / lengthCoordinates);
+    sectionPercentages[4] = (section85 / lengthCoordinates);
+    sectionPercentages[5] = (section86 / lengthCoordinates);
+    sectionPercentages[6] = (section87 / lengthCoordinates);
+    sectionPercentages[7] = (section88 / lengthCoordinates);
+    sectionPercentages[8] = (section89 / lengthCoordinates);
+    sectionPercentages[9] = (section810 / lengthCoordinates);
 
     while (j < 10) {
       if (sectionPercentages[j] > 0 && sectionPercentages[j] <= 0.10) {

@@ -1,34 +1,36 @@
 
+import 'dart:math';
+
 import 'package:flutter/material.dart';
-import 'columns_heatmap/Column_2.dart';
+import 'package:mywebsite_kandidat/views/hannes_heatmap/columns_heatmap/column_2.dart';
 import 'columns_heatmap/column_1.dart';
+import 'columns_heatmap/column_10.dart';
+import 'columns_heatmap/column_3.dart';
+import 'columns_heatmap/column_4.dart';
+import 'columns_heatmap/column_5.dart';
+import 'columns_heatmap/column_6.dart';
+import 'columns_heatmap/column_7.dart';
+import 'columns_heatmap/column_8.dart';
+import 'columns_heatmap/column_9.dart';
 import 'field_area.dart';
 
-var coordinatesX = [12,24,5,7,3,29,15];
-var coordinatesY = [15,14,24,28,4,8,25];
+var coordinatesX = [];
+var coordinatesY = [];
 
 class HannesHeatmap extends StatelessWidget {
   HannesHeatmap({Key? key}) : super(key: key);
 
-  var lengthCoordinates = coordinatesX.length;
-
-  var section11 = 0;
-  var section11Percent = 0.0;
-  var i = 0;
-
   @override
   Widget build(BuildContext context) {
-    while (i < lengthCoordinates) {
-      if (coordinatesX[i] < 20 && coordinatesY[i] < 20) {
-        section11++;
-        i++;
-      }
-      else {
-        i++;
-      }
+
+    //Generates 100 random coordinates
+    for (var i = 0; i < 100; i++) {
+      coordinatesX[i] = Random().nextInt(400);
+      coordinatesY[i] = Random().nextInt(200);
     }
 
-    section11Percent = (section11/lengthCoordinates);
+    //coordinatesX = [14, 53, 53, 23, 89, 390,239, 310];
+    //coordinatesY = [80, 123, 153, 3, 189, 90,139, 110];
 
     return Row(
       mainAxisSize: MainAxisSize.max,
@@ -37,26 +39,24 @@ class HannesHeatmap extends StatelessWidget {
       children: [
 
         Container(
-          height: 200,
-          width: 400,
+          height: 204,
+          width: 404,
+          decoration: BoxDecoration(
+              border: Border.all(color: Colors.black, width: 2.0)
+          ),
           child:
             Row(
               children: [
-                Column2(),
-                Column1(),
-                Column(
-                  children: const [
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                    FieldArea(fieldColor: Colors.greenAccent,),
-                  ],),
+                Column1(coordinatesX: coordinatesX, coordinatesY: coordinatesY,),
+                Column2(coordinatesX: coordinatesX, coordinatesY: coordinatesY,),
+                Column3(coordinatesX: coordinatesX, coordinatesY: coordinatesY,),
+                Column4(coordinatesX: coordinatesX, coordinatesY: coordinatesY,),
+                Column5(coordinatesX: coordinatesX, coordinatesY: coordinatesY,),
+                Column6(coordinatesX: coordinatesX, coordinatesY: coordinatesY,),
+                Column7(coordinatesX: coordinatesX, coordinatesY: coordinatesY,),
+                Column8(coordinatesX: coordinatesX, coordinatesY: coordinatesY,),
+                Column9(coordinatesX: coordinatesX, coordinatesY: coordinatesY,),
+                Column10(coordinatesX: coordinatesX, coordinatesY: coordinatesY,),
               ],
             ),
         ),
