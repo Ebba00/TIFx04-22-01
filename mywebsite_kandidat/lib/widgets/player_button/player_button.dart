@@ -25,14 +25,20 @@ class PlayerButtonState extends State <PlayerButton>{
         setState(() => isHovering = hovering);
       },
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
-        child: Text(
-          widget.title,
-          style: const TextStyle(
-            fontSize: 12,
-            fontWeight: FontWeight.w700,
-            color: Colors.black,
-          ),
+        width: 180,
+        height: 40,
+        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+        child: Align(
+          alignment: Alignment.center,
+          child:
+            Text(
+              widget.title,
+              style: const TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.w700,
+                color: Colors.black,
+              ),
+            ),
         ),
         decoration: (isHovering
         ?  BoxDecoration(color: Colors.black38,

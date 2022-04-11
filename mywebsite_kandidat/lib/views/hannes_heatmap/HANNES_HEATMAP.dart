@@ -12,22 +12,27 @@ import 'columns_heatmap/column_6.dart';
 import 'columns_heatmap/column_7.dart';
 import 'columns_heatmap/column_8.dart';
 import 'columns_heatmap/column_9.dart';
-import 'field_area.dart';
 
-var coordinatesX = [];
-var coordinatesY = [];
+//var coordinatesX = List.generate(0, (int index) => true) as dynamic;
+//var coordinatesY = List.generate(0, (int index) => true) as dynamic;
+
+//var coordinatesX = [];
+//var coordinatesY = [];
 
 class HannesHeatmap extends StatelessWidget {
-  HannesHeatmap({Key? key}) : super(key: key);
+  HannesHeatmap({Key? key, required this.coordinatesX1, required this.coordinatesY2}) : super(key: key);
+
+  final coordinatesX1;
+  final coordinatesY2;
 
   @override
   Widget build(BuildContext context) {
 
     //Generates 100 random coordinates
-    for (var i = 0; i < 100; i++) {
-      coordinatesX[i] = Random().nextInt(400);
-      coordinatesY[i] = Random().nextInt(200);
-    }
+    //for (var i = 0; i < 1; i++) {
+      //coordinatesX[i].add(Random().nextInt(10));
+      //coordinatesY[i].add(Random().nextInt(10));
+    //}
 
     //coordinatesX = [14, 53, 53, 23, 89, 390,239, 310];
     //coordinatesY = [80, 123, 153, 3, 189, 90,139, 110];
@@ -47,16 +52,16 @@ class HannesHeatmap extends StatelessWidget {
           child:
             Row(
               children: [
-                Column1(coordinatesX: coordinatesX, coordinatesY: coordinatesY,),
-                Column2(coordinatesX: coordinatesX, coordinatesY: coordinatesY,),
-                Column3(coordinatesX: coordinatesX, coordinatesY: coordinatesY,),
-                Column4(coordinatesX: coordinatesX, coordinatesY: coordinatesY,),
-                Column5(coordinatesX: coordinatesX, coordinatesY: coordinatesY,),
-                Column6(coordinatesX: coordinatesX, coordinatesY: coordinatesY,),
-                Column7(coordinatesX: coordinatesX, coordinatesY: coordinatesY,),
-                Column8(coordinatesX: coordinatesX, coordinatesY: coordinatesY,),
-                Column9(coordinatesX: coordinatesX, coordinatesY: coordinatesY,),
-                Column10(coordinatesX: coordinatesX, coordinatesY: coordinatesY,),
+                Column1(coordinatesX: coordinatesX1, coordinatesY: coordinatesY2,),
+                Column2(coordinatesX: coordinatesX1, coordinatesY: coordinatesY2,),
+                Column3(coordinatesX: coordinatesX1, coordinatesY: coordinatesY2,),
+                Column4(coordinatesX: coordinatesX1, coordinatesY: coordinatesY2,),
+                Column5(coordinatesX: coordinatesX1, coordinatesY: coordinatesY2,),
+                Column6(coordinatesX: coordinatesX1, coordinatesY: coordinatesY2,),
+                Column7(coordinatesX: coordinatesX1, coordinatesY: coordinatesY2,),
+                Column8(coordinatesX: coordinatesX1, coordinatesY: coordinatesY2,),
+                Column9(coordinatesX: coordinatesX1, coordinatesY: coordinatesY2,),
+                Column10(coordinatesX: coordinatesX1, coordinatesY: coordinatesY2,),
               ],
             ),
         ),

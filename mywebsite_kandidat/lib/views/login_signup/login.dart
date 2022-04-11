@@ -7,8 +7,8 @@ import '../../widgets/navigation_bar/navbar_logo.dart';
 import '../Players/players_view.dart';
 
 
-class SignUpView extends StatefulWidget {
-  const SignUpView({Key? key}) : super(key: key);
+class LoginView extends StatefulWidget {
+  const LoginView({Key? key}) : super(key: key);
 
 
   @override
@@ -129,101 +129,6 @@ class LogInViewState extends State {
                     ],
                   ),
                 ),
-              ],
-            ),
-            Container(
-              height: 50,
-              width: 100,
-              decoration: BoxDecoration(
-                color: Colors.grey[50],
-                borderRadius: BorderRadius.circular(10),
-              ),
-              alignment: Alignment.center,
-              child: const Text('ELLER',
-                style: TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.w800,
-                ),
-              ),
-            ),
-            Column(
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.grey[50],
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  height: 300,
-                  width: 350,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget> [
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      const Text('KONTAKTA OSS',
-                        style: TextStyle(
-                          fontSize: 25,
-                          fontWeight: FontWeight.w800,
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 30,
-                      ),
-                      Container(
-                        width: 275,
-                        height: 50,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: const TextField(
-                          decoration: InputDecoration(
-                            hintText: 'Ange mailadress',
-                            border: OutlineInputBorder(),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      Container(
-                        width: 275,
-                        height: 50,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: TextField(
-                          obscureText: _isObscure,
-                          decoration: InputDecoration(
-                              hintText: 'Ange lösenord',
-                              border: const OutlineInputBorder(),
-                              suffixIcon: IconButton(
-                                  icon: Icon(
-                                      _isObscure ? Icons.visibility : Icons.visibility_off),
-                                  onPressed: () {
-                                    setState(() {
-                                      _isObscure = !_isObscure;
-                                    });
-                                  })),
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 30,
-                      ),
-                      Container(
-                        height: 40,
-                        width: 200,
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 31, 229, 146),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: const LoginButton('SKAPA KONTO', PlayersRoute),
-                      ),
-                    ],
-                  ),
-                ),
-
               ],
             ),
           ],
