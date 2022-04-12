@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:mywebsite_kandidat/routing/route_names.dart';
 import 'package:mywebsite_kandidat/views/hannes_heatmap/HANNES_HEATMAP.dart';
 import 'package:mywebsite_kandidat/views/home/home_view.dart';
+import '../views/Players/all_players/PLAYER_LAYOUT_TEST.dart';
 import '../views/Players/all_players/hannes_gustafsson.dart';
 import '../views/Players/players_view.dart';
 import '../views/Players/stats_view.dart';
@@ -36,6 +37,8 @@ Route<dynamic>? generateRoute(RouteSettings settings) {
       return _getPageRoute(const LoginView());
     case HannesGRoute:
       return _getPageRoute(const HannesGView());
+    case PlayerLayoutRoute:
+      return _getPageRoute(const PlayerLayoutView());
 
     default:
   }

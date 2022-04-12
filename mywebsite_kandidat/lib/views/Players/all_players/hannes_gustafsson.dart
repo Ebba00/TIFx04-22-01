@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mywebsite_kandidat/widgets/navigation_bar/navbar_item.dart';
 
+import '../../../routing/route_names.dart';
 import '../../hannes_heatmap/HANNES_HEATMAP.dart';
 
 var coordinatesX = [];
@@ -16,6 +18,13 @@ class HannesGView extends StatelessWidget {
    coordinatesY = [80, 123, 153, 3, 189, 90,139, 110];
 
 
-    return HannesHeatmap(coordinatesY2: coordinatesY, coordinatesX1: coordinatesX,);
+    return Column(
+
+      children: [
+        HannesHeatmap(coordinatesY2: coordinatesY, coordinatesX1: coordinatesX,),
+        const NavBarItem('Player layout', PlayerLayoutRoute)
+    ],
+    );
+
   }
 }
