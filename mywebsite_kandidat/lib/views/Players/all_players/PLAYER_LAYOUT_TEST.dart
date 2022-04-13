@@ -15,6 +15,13 @@ var games = [
   'Lockerud (B)',
 ];
 
+var hannesSpeed = [10,11,12];
+var hannesAcc = [20,21,22];
+var hannesDistance = [30,31,32];
+
+var hannesXCoordinates = [10, 340, 250, 310, 90, 130, 50, 380, 230, 280, 350, 330, 30, 90, 360];
+var hannesYCoordinates = [10, 130, 50, 110, 190, 130, 20, 80, 130, 180, 60, 30, 170, 90, 60];
+
 
 class PlayerLayoutView extends StatefulWidget {
   const PlayerLayoutView({Key? key}) : super(key: key);
@@ -208,6 +215,7 @@ class LogInViewState extends State {
                                       style: TextStyle(
                                         fontSize: 15,
                                         fontWeight: FontWeight.w800,
+                                        color: Colors.black,
                                       ),
                                     ),
                                 ),
@@ -236,6 +244,7 @@ class LogInViewState extends State {
                                   style: TextStyle(
                                     fontSize: 15,
                                     fontWeight: FontWeight.w800,
+                                    color: Colors.black54,
                                   ),
                                 ),
                               ),
@@ -243,10 +252,77 @@ class LogInViewState extends State {
                           ),
                         ],
                       ),
+                      const SizedBox(
+                        height: 40,
+                        width: 30,
+                      ),
+                      SizedBox(
+                        width: 400,
+                        height: 120,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text('UPPMÄTT MAXHASTIGHET:',
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w800,
+                                  ),
+                                ),
+                                Text('${hannesSpeed[games.indexOf(selectedGame)]}    [m/s]',
+                                  style: const TextStyle(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text('MAXIMALT UPPMÄTT\n ACCELERATION:',
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w800,
+                                  ),
+                                ),
+                                Text('${hannesAcc[games.indexOf(selectedGame)]}    [m^2/s]',
+                                  style: const TextStyle(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text('FÄRDAD DISTANS:',
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w800,
+                                  ),
+                                ),
+                                Text('${hannesDistance[games.indexOf(selectedGame)]}    [km]',
+                                  style: const TextStyle(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ),
-
               ],
             ),
           ],
