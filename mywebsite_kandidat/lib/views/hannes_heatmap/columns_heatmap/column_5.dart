@@ -171,18 +171,28 @@ class Column5 extends StatelessWidget {
     }
 
 
-    return Column(
-      children: [
-        FieldArea(fieldColor: sectionColors[0],),
-        FieldArea(fieldColor: sectionColors[1],),
-        FieldArea(fieldColor: sectionColors[2],),
-        FieldArea(fieldColor: sectionColors[3],),
-        FieldArea(fieldColor: sectionColors[4],),
-        FieldArea(fieldColor: sectionColors[5],),
-        FieldArea(fieldColor: sectionColors[6],),
-        FieldArea(fieldColor: sectionColors[7],),
-        FieldArea(fieldColor: sectionColors[8],),
-        FieldArea(fieldColor: sectionColors[9],),
-      ],);
+    return Container(
+      height: 150,
+      width: 31,
+      decoration: const BoxDecoration(
+        border: Border(
+          right: BorderSide(color: Colors.black, width: 1,)
+        )
+      ),
+      child:
+        Column(
+          children: [
+            FieldArea(fieldColor: sectionColors[0],),
+            FieldArea(fieldColor: sectionColors[1],),
+            FieldArea(fieldColor: sectionColors[2],),
+            FieldArea(fieldColor: sectionColors[3],),
+            FieldArea(fieldColor: sectionColors[4],),
+            FieldArea(fieldColor: sectionColors[5],),
+            FieldArea(fieldColor: sectionColors[6],),
+            FieldArea(fieldColor: sectionColors[7],),
+            FieldArea(fieldColor: sectionColors[8],),
+            FieldArea(fieldColor: sectionColors[9],),
+          ],),
+    );
   }
 }

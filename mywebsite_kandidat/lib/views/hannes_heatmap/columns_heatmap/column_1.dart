@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import '../field_area.dart';
+import '../field_area_TL.dart';
 
 class Column1 extends StatelessWidget {
   Column1({Key? key, required this.coordinatesX, required this.coordinatesY}) : super(key: key);

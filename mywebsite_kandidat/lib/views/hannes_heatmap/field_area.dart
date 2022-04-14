@@ -9,8 +9,8 @@ class FieldArea extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 20,
-        width: 40,
+        height: 15,
+        width: 30,
         color: fieldColor,
       );
   }

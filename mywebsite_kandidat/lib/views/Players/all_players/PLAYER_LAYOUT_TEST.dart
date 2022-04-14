@@ -19,8 +19,8 @@ var hannesSpeed = [10,11,12];
 var hannesAcc = [20,21,22];
 var hannesDistance = [30,31,32];
 
-var hannesXCoordinates = [10, 340, 250, 310, 90, 130, 50, 380, 230, 280, 350, 330, 30, 90, 360];
-var hannesYCoordinates = [10, 130, 50, 110, 190, 130, 20, 80, 130, 180, 60, 30, 170, 90, 60];
+var hannesXCoordinates = [14, 53, 53, 23, 89, 390,239, 310];
+var hannesYCoordinates = [80, 123, 153, 3, 189, 90,139, 110];
 
 
 class PlayerLayoutView extends StatefulWidget {
@@ -33,6 +33,11 @@ class PlayerLayoutView extends StatefulWidget {
 class LogInViewState extends State {
 
   String selectedGame = games[0];
+  bool statsHeatmap = true;
+  Color statsColor = Colors.black;
+  Color heatColor = Colors.black54;
+  var boxHeight1 = 120;
+  var boxHeightGap = 40;
 
   @override
   Widget build(BuildContext context) {
@@ -194,7 +199,14 @@ class LogInViewState extends State {
                         children: [
                           GestureDetector(
                             onTap: () {
-                              locator<NavigationService>().navigateTo(HannesGRoute);},
+                              //locator<NavigationService>().navigateTo(HannesGRoute);
+                              statsHeatmap = true;
+                              statsColor = Colors.black;
+                              heatColor = Colors.black54;
+                              boxHeight1 = 120;
+                              boxHeightGap = 40;
+                              },
+
                             child:
                               Container(
                                 height: 50,
@@ -208,14 +220,14 @@ class LogInViewState extends State {
                                     topLeft: Radius.circular(10),
                                   ),
                                 ),
-                                child: const Align(
+                                child: Align(
                                   alignment: Alignment.center,
                                   child:
                                     Text('STATISTIK',
                                       style: TextStyle(
                                         fontSize: 15,
                                         fontWeight: FontWeight.w800,
-                                        color: Colors.black,
+                                        color: statsColor,
                                       ),
                                     ),
                                 ),
@@ -223,7 +235,13 @@ class LogInViewState extends State {
                           ),
                           GestureDetector(
                             onTap: () {
-                              locator<NavigationService>().navigateTo(HannesGRoute);},
+                              //locator<NavigationService>().navigateTo(HannesGRoute);
+                              statsHeatmap = false;
+                              statsColor = Colors.black54;
+                              heatColor = Colors.black;
+                              boxHeight1 = 154;
+                              boxHeightGap = 20;
+                              },
                             child:
                             Container(
                               height: 50,
@@ -237,14 +255,14 @@ class LogInViewState extends State {
                                   topRight: Radius.circular(10),
                                 ),
                               ),
-                              child: const Align(
+                              child: Align(
                                 alignment: Alignment.center,
                                 child:
                                 Text('HEATMAP',
                                   style: TextStyle(
                                     fontSize: 15,
                                     fontWeight: FontWeight.w800,
-                                    color: Colors.black54,
+                                    color: heatColor,
                                   ),
                                 ),
                               ),
@@ -252,14 +270,16 @@ class LogInViewState extends State {
                           ),
                         ],
                       ),
-                      const SizedBox(
-                        height: 40,
+                      SizedBox(
+                        height: boxHeightGap as double,
                         width: 30,
                       ),
                       SizedBox(
-                        width: 400,
-                        height: 120,
-                        child: Column(
+                        width: 410,
+                        height: boxHeight1 as double,
+                        child: statsHeatmap == true
+    ?
+                        Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -291,7 +311,7 @@ class LogInViewState extends State {
                                     fontWeight: FontWeight.w800,
                                   ),
                                 ),
-                                Text('${hannesAcc[games.indexOf(selectedGame)]}    [m^2/s]',
+                                Text('${hannesAcc[games.indexOf(selectedGame)]}    [m/s^2]',
                                   style: const TextStyle(
                                     fontSize: 15,
                                     fontWeight: FontWeight.w400,
@@ -318,7 +338,8 @@ class LogInViewState extends State {
                               ],
                             ),
                           ],
-                        ),
+                        )
+                        : HannesHeatmap(coordinatesY2: hannesYCoordinates, coordinatesX1: hannesXCoordinates,),
                       ),
                     ],
                   ),
