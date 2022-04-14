@@ -23,127 +23,36 @@ class LogInViewState extends State {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const SizedBox(height: 50,),
+        const SizedBox(height: 45,),
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Column(
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.grey[50],
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  height: 300,
-                  width: 350,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget> [
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      const Text('LOGGA IN',
+            SizedBox(
+              width: 400,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: const <Widget> [
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child:
+                      Text('VI JOBBAR PÅ DET...',
                         style: TextStyle(
-                          fontSize: 25,
-                          fontWeight: FontWeight.w800,
-                        ),
+                            fontWeight: FontWeight.w800, height: 1.15, fontSize: 30),
+                        textAlign: TextAlign.left,
                       ),
-                      const SizedBox(
-                        height: 30,
-                      ),
-                      Container(
-                        width: 275,
-                        height: 50,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: TextField(
-                          controller: myControllerMail,
-                          decoration: const InputDecoration(
-                            hintText: 'Ange mailadress',
-                            border: OutlineInputBorder(),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      Container(
-                        width: 275,
-                        height: 50,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: TextField(
-                          obscureText: _isObscure,
-                          controller: myControllerPassword,
-                          decoration: InputDecoration(
-                              hintText: 'Ange lösenord',
-                              border: const OutlineInputBorder(),
-                              suffixIcon: IconButton(
-                                  icon: Icon(
-                                      _isObscure ? Icons.visibility : Icons.visibility_off),
-                                  onPressed: () {
-                                    setState(() {
-                                      _isObscure = !_isObscure;
-                                    });
-                                  })),
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 30,
-                      ),
-                      SizedBox(
-                        height: 40,
-                        width: 200,
-                        child:
-                        ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            primary: const Color.fromARGB(255, 31, 229, 146), // background
-                            onPrimary: const Color.fromARGB(255, 31, 229, 146), // foreground
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                          ),
-                          child: const Text(
-                            'LOGGA IN',
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w800,
-                              color: Colors.white,
-                            ),
-                          ),
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) =>
-                              (myControllerMail.text == 'kandidat' && myControllerPassword.text == 'kandidat')
-                                  ? const PlayersView()
-                                  : const PlayersView()
-                              ),
-                            );
-                          },
-                        ),
-                      ),
-                    ],
                   ),
-                ),
-              ],
-            ),
-            Container(
-              height: 50,
-              width: 100,
-              decoration: BoxDecoration(
-                color: Colors.grey[50],
-                borderRadius: BorderRadius.circular(10),
-              ),
-              alignment: Alignment.center,
-              child: const Text('ELLER',
-                style: TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.w800,
-                ),
+                  SizedBox(height: 30,),
+                  Text('För tillfället kan tyvärr inte nya användare skapa ett konto själva utan'
+                      ' behöver kontakta oss på INDICATE så att vi kan sätta upp ett konto åt er.'
+                      ' Är ni intresserade och vill ta del av vår tjänst, eller om ni har några som'
+                      ' helst frågor, så är det bara att ange en mailadress samt skicka iväg ett meddelande.'
+                      ' Vi svarar så fort vi kan och svaret skickas till den angivna mailadressen.',
+                    style: TextStyle(fontSize: 15, height: 1.7),
+                    textAlign: TextAlign.left,
+                  ),
+                ],
               ),
             ),
             Column(
@@ -153,8 +62,8 @@ class LogInViewState extends State {
                     color: Colors.grey[50],
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  height: 300,
-                  width: 350,
+                  height: 340,
+                  width: 460,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget> [
@@ -171,7 +80,7 @@ class LogInViewState extends State {
                         height: 30,
                       ),
                       Container(
-                        width: 275,
+                        width: 355,
                         height: 50,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
@@ -187,28 +96,21 @@ class LogInViewState extends State {
                         height: 20,
                       ),
                       Container(
-                        width: 275,
-                        height: 50,
+                        width: 355,
+                        height: 90,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: TextField(
-                          obscureText: _isObscure,
+                        child: const TextField(
+                          maxLines: 10,
+                          keyboardType: TextInputType.multiline,
                           decoration: InputDecoration(
-                              hintText: 'Ange lösenord',
-                              border: const OutlineInputBorder(),
-                              suffixIcon: IconButton(
-                                  icon: Icon(
-                                      _isObscure ? Icons.visibility : Icons.visibility_off),
-                                  onPressed: () {
-                                    setState(() {
-                                      _isObscure = !_isObscure;
-                                    });
-                                  })),
+                              hintText: 'Vad har du på hjärtat...',
+                              border: OutlineInputBorder(),
                         ),
-                      ),
+                      ),),
                       const SizedBox(
-                        height: 30,
+                        height: 25,
                       ),
                       Container(
                         height: 40,
@@ -218,7 +120,7 @@ class LogInViewState extends State {
                           color: const Color.fromARGB(255, 31, 229, 146),
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: const LoginButton('SKAPA KONTO', PlayersRoute),
+                        child: const LoginButton('Skicka', PlayersRoute),
                       ),
                     ],
                   ),
