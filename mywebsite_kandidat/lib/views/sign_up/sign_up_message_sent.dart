@@ -7,8 +7,8 @@ import '../../widgets/navigation_bar/navbar_logo.dart';
 import '../Players/players_view.dart';
 
 
-class SignUpView extends StatelessWidget {
-  const SignUpView({Key? key}) : super(key: key);
+class SignUpMessageView extends StatelessWidget {
+  const SignUpMessageView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,11 +28,11 @@ class SignUpView extends StatelessWidget {
                   Align(
                     alignment: Alignment.centerLeft,
                     child:
-                      Text('VI JOBBAR PÅ DET...',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w800, height: 1.15, fontSize: 30),
-                        textAlign: TextAlign.left,
-                      ),
+                    Text('VI JOBBAR PÅ DET...',
+                      style: TextStyle(
+                          fontWeight: FontWeight.w800, height: 1.15, fontSize: 30),
+                      textAlign: TextAlign.left,
+                    ),
                   ),
                   SizedBox(height: 30,),
                   Text('För tillfället kan tyvärr inte nya användare skapa ett konto själva utan'
@@ -57,61 +57,30 @@ class SignUpView extends StatelessWidget {
                   width: 460,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget> [
-                      const SizedBox(
-                        height: 20,
+                    children: const <Widget> [
+                      SizedBox(
+                        height: 40,
                       ),
-                      const Text('KONTAKTA OSS',
+                      Text('TACK!',
                         style: TextStyle(
                           fontSize: 25,
                           fontWeight: FontWeight.w800,
                         ),
                       ),
-                      const SizedBox(
+                      SizedBox(
                         height: 30,
                       ),
-                      Container(
+                      SizedBox(
+                        height: 200,
                         width: 355,
-                        height: 50,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: const TextField(
-                          decoration: InputDecoration(
-                            hintText: 'Ange mailadress',
-                            border: OutlineInputBorder(),
+                        child:
+                          Text('Stort tack för visat intresse! Vi läser ditt meddelande och svarar'
+                              ' så fort vi kan. Om du kommer på något annat under tiden du väntar på svar'
+                              ' är det bara att skicka ett nytt meddelande så svarar vi på det med. Vi hörs snart!'
+                              ' \n\n Med vänliga hälsningar, \n teamet på INDICATE.',
+                            style: TextStyle(fontSize: 15, height: 1.7),
+                            textAlign: TextAlign.center,
                           ),
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      Container(
-                        width: 355,
-                        height: 90,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: const TextField(
-                          maxLines: 10,
-                          keyboardType: TextInputType.multiline,
-                          decoration: InputDecoration(
-                              hintText: 'Vad har du på hjärtat...',
-                              border: OutlineInputBorder(),
-                        ),
-                      ),),
-                      const SizedBox(
-                        height: 25,
-                      ),
-                      Container(
-                        height: 40,
-                        width: 200,
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 31, 229, 146),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: const LoginButton('Skicka', SignUpMessageRoute),
                       ),
                     ],
                   ),

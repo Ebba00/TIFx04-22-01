@@ -36,7 +36,7 @@ class PlayersView extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children:  [
-        const SizedBox(height: 30,),
+        const SizedBox(height: 40,),
         /*const Align(
           alignment: Alignment.center,
           child: Text('Lägg till en spelare i ditt lag',
@@ -143,7 +143,7 @@ class PlayersView extends StatelessWidget {
               fontSize: 15,
               color: Colors.black,
             ),),),
-        const SizedBox(height: 80,),
+        const SizedBox(height: 70,),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           mainAxisSize: MainAxisSize.max,

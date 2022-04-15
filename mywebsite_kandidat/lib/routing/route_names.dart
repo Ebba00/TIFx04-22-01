@@ -9,6 +9,7 @@ const String CreateAccountRoute = 'create_account';
 const String AddressSelectionRoute = 'adress_selection';
 const String HannesHeatmapRoute = 'hannes_heatmap';
 const String SignUpRoute = 'sign_up';
+const String SignUpMessageRoute = 'sign_up_message';
 const String HannesGRoute = 'hannes_g';
 const String PlayerLayoutRoute = 'player_layout';
 

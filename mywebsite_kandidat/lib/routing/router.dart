@@ -15,6 +15,7 @@ import '../views/about/about_view.dart';
 import '../views/episodes/episodes_view.dart';
 import '../views/login_signup/login.dart';
 import '../views/sign_up/sign_up.dart';
+import '../views/sign_up/sign_up_message_sent.dart';
 
 
 Route<dynamic>? generateRoute(RouteSettings settings) {
@@ -33,6 +34,8 @@ Route<dynamic>? generateRoute(RouteSettings settings) {
       //return _getPageRoute(HannesHeatmap());
     case SignUpRoute:
       return _getPageRoute(const SignUpView());
+    case SignUpMessageRoute:
+      return _getPageRoute(const SignUpMessageView());
     case LoginRoute:
       return _getPageRoute(const LoginView());
     case HannesGRoute:
