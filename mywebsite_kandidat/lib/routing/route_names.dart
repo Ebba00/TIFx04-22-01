@@ -1,16 +1,13 @@
-const String HomeRoute = 'home';
-const String AboutRoute = 'about';
-const String EpisodesRoute = 'episodes';
-const String LogInRoute = 'login_signup';
-const String PlayersRoute = 'players';
-const String StatsRoute = 'stats';
-const String LoginRoute = 'log_in';
-const String CreateAccountRoute = 'create_account';
-const String AddressSelectionRoute = 'adress_selection';
-const String HannesHeatmapRoute = 'hannes_heatmap';
-const String SignUpRoute = 'sign_up';
-const String SignUpMessageRoute = 'sign_up_message';
-const String HannesGRoute = 'hannes_g';
-const String PlayerLayoutRoute = 'player_layout';
+const String HomeRoute = '/hem';
+const String AboutRoute = '/om-oss';
+const String EpisodesRoute = '/exempel';
+const String PlayersRoute = '/spelare';
+const String StatsRoute = '/vadärdetta???';
+const String LoginRoute = '/logga-in';
+const String CreateAccountRoute = '/skapa-konto';
+const String SignUpRoute = '/skapa-konto';
+const String SignUpMessageRoute = '/meddelande-skickat';
+const String HannesGRoute = '/hannes-gustafsson';
+const String PlayerLayoutRoute = '/lol';
 
 

@@ -5,6 +5,7 @@ import 'package:flutter/rendering.dart';
 import 'package:mywebsite_kandidat/Dropdown/dropdown_button_name.dart';
 import '../../Dropdown/drop_down_game.dart';
 import '../../Dropdown/dropdown_button_name.dart';
+import '../../VARIABLES.dart';
 import '../../widgets/episodes_details/episodes_heatmap.dart';
 
 
@@ -59,8 +60,10 @@ class EpisodesContentDesktop extends State<Parent> {
   int selectedSpeed = speed[0][0];
   String selectedHeatmap = heatmaps[0][0];
 
+
   @override
   Widget build(BuildContext context) {
+    print(newList);
     return Row(
       mainAxisSize: MainAxisSize.max,
       children: <Widget>[

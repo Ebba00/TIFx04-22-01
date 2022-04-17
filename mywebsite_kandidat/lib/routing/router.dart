@@ -21,51 +21,59 @@ import '../views/sign_up/sign_up_message_sent.dart';
 Route<dynamic>? generateRoute(RouteSettings settings) {
   switch (settings.name) {
     case HomeRoute:
-      return _getPageRoute(const HomeView());
+      return _getPageRoute(const HomeView(), settings);
     case AboutRoute:
-      return _getPageRoute(const AboutView());
+      return _getPageRoute(const AboutView(), settings);
     case EpisodesRoute:
-      return _getPageRoute(const EpisodesView());
+      return _getPageRoute(const EpisodesView(), settings);
     case PlayersRoute:
-      return _getPageRoute(const PlayersView());
+      return _getPageRoute(const PlayersView(), settings);
     case StatsRoute:
-      return _getPageRoute(const StatsView());
-    //case HannesHeatmapRoute:
-      //return _getPageRoute(HannesHeatmap());
+      return _getPageRoute(const StatsView(), settings);
     case SignUpRoute:
-      return _getPageRoute(const SignUpView());
+      return _getPageRoute(const SignUpView(), settings);
     case SignUpMessageRoute:
-      return _getPageRoute(const SignUpMessageView());
+      return _getPageRoute(const SignUpMessageView(), settings);
     case LoginRoute:
-      return _getPageRoute(const LoginView());
+      return _getPageRoute(const LoginView(), settings);
     case HannesGRoute:
-      return _getPageRoute(const HannesGView());
+      return _getPageRoute(const HannesGView(), settings);
     case PlayerLayoutRoute:
-      return _getPageRoute(const PlayerLayoutView());
+      return _getPageRoute(const PlayerLayoutView(), settings);
 
     default:
+      return _getPageRoute(const HomeView(), settings);
   }
   return null;
 }
 
-PageRoute _getPageRoute(Widget child) {
-  return _FadeRoute(child: child);
+PageRoute _getPageRoute(Widget child, RouteSettings settings) {
+  return _FadeRoute(child: child, routeName: settings.name as String);
 }
 
 class _FadeRoute extends PageRouteBuilder {
   final Widget child;
+  final String routeName;
 
-  _FadeRoute({required this.child}) :
+  _FadeRoute({required this.child, required this.routeName}) :
         super (
-          pageBuilder: (BuildContext context,
-              Animation<double> animation,
-              Animation<double> secondaryAnimation,) => child,
-
-          transitionsBuilder: (BuildContext context,
+        settings: RouteSettings(name: routeName),
+          pageBuilder: (
+              BuildContext context,
               Animation<double> animation,
               Animation<double> secondaryAnimation,
-              Widget child,) =>
-              FadeTransition(opacity: animation, child: child,)
+              ) => child,
+
+          transitionsBuilder: (
+              BuildContext context,
+              Animation<double> animation,
+              Animation<double> secondaryAnimation,
+              Widget child,
+              ) =>
+              FadeTransition(
+                opacity: animation,
+                child: child,
+              )
       );
 }
 

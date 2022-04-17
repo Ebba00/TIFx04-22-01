@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mywebsite_kandidat/views/hannes_heatmap/HANNES_HEATMAP.dart';
 import 'package:mywebsite_kandidat/widgets/login_button/login_button.dart';
 import 'package:mywebsite_kandidat/widgets/navigation_bar/navbar_item.dart';
+import '../../VARIABLES.dart';
+import '../../main.dart';
 import '../../routing/route_names.dart';
 import '../../widgets/navigation_bar/navbar_logo.dart';
 import '../Players/players_view.dart';
@@ -120,9 +122,13 @@ class LogInViewState extends State {
                               MaterialPageRoute(builder: (context) =>
                               (myControllerMail.text == 'kandidat' && myControllerPassword.text == 'kandidat')
                                   ? const PlayersView()
-                                  : const PlayersView()
+                                  : const LoginView()
                               ),
                             );
+                            (myControllerMail.text == 'kandidat' && myControllerPassword.text == 'kandidat')
+                                ? newList = true
+                                : newList = false;
+                            print(newList);
                           },
                         ),
                       ),

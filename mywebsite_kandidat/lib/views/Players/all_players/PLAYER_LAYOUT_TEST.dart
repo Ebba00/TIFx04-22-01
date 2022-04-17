@@ -15,23 +15,31 @@ var games = [
   'Lockerud (B)',
 ];
 
-var hannesSpeed = [10,11,12];
-var hannesAcc = [20,21,22];
-var hannesDistance = [30,31,32];
+var hannesSpeed = [10, 11, 12];
+var hannesAcc = [20, 21, 22];
+var hannesDistance = [30, 31, 32];
 
-var hannesXCoordinates = [14, 53, 53, 23, 89, 390,239, 310];
-var hannesYCoordinates = [80, 123, 153, 3, 189, 90,139, 110];
+var hannesXCoordinatesGame1 = [14, 53, 53, 23, 89, 390, 239, 310];
+var hannesYCoordinatesGame1 = [80, 123, 153, 3, 189, 90, 139, 110];
 
+var hannesXCoordinatesGame2 = [];
+var hannesYCoordinatesGame2 = [];
+
+var hannesXCoordinatesGame3 = [114, 153, 153, 223, 289, 90, 39, 210];
+var hannesYCoordinatesGame3 = [180, 12, 53, 39, 19, 190, 39, 10];
+
+var hannesXCoordinates = [hannesXCoordinatesGame1, hannesXCoordinatesGame2, hannesXCoordinatesGame3];
+var hannesYCoordinates = [hannesYCoordinatesGame1, hannesYCoordinatesGame2, hannesYCoordinatesGame3];
 
 class PlayerLayoutView extends StatefulWidget {
   const PlayerLayoutView({Key? key}) : super(key: key);
 
-
   @override
-  State createState() => LogInViewState(); }
+  State createState() => LogInViewState();
+}
 
-class LogInViewState extends State {
-
+class LogInViewState extends State<PlayerLayoutView>
+    with SingleTickerProviderStateMixin {
   String selectedGame = games[0];
   bool statsHeatmap = true;
   Color statsColor = Colors.black;
@@ -39,11 +47,21 @@ class LogInViewState extends State {
   var boxHeight1 = 120;
   var boxHeightGap = 40;
 
+  late TabController _tabController;
+
+  @override
+  void initState() {
+    _tabController = TabController(length: 2, vsync: this);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const SizedBox(height: 40,),
+        const SizedBox(
+          height: 40,
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -59,7 +77,7 @@ class LogInViewState extends State {
                   width: 350,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget> [
+                    children: <Widget>[
                       const SizedBox(
                         height: 20,
                         width: 30,
@@ -93,13 +111,15 @@ class LogInViewState extends State {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: const [
-                                Text('NAMN:',
+                                Text(
+                                  'NAMN:',
                                   style: TextStyle(
                                     fontSize: 15,
                                     fontWeight: FontWeight.w800,
                                   ),
                                 ),
-                                Text('Hannes Gustafsson',
+                                Text(
+                                  'Hannes Gustafsson',
                                   style: TextStyle(
                                     fontSize: 15,
                                     fontWeight: FontWeight.w400,
@@ -111,13 +131,15 @@ class LogInViewState extends State {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: const [
-                                Text('POSITION:',
+                                Text(
+                                  'POSITION:',
                                   style: TextStyle(
                                     fontSize: 15,
                                     fontWeight: FontWeight.w800,
                                   ),
                                 ),
-                                Text('Center',
+                                Text(
+                                  'Center',
                                   style: TextStyle(
                                     fontSize: 15,
                                     fontWeight: FontWeight.w400,
@@ -129,13 +151,15 @@ class LogInViewState extends State {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: const [
-                                Text('NUMMER:',
+                                Text(
+                                  'NUMMER:',
                                   style: TextStyle(
                                     fontSize: 15,
                                     fontWeight: FontWeight.w800,
                                   ),
                                 ),
-                                Text('26',
+                                Text(
+                                  '26',
                                   style: TextStyle(
                                     fontSize: 15,
                                     fontWeight: FontWeight.w400,
@@ -147,13 +171,15 @@ class LogInViewState extends State {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: const [
-                                Text('FÖDELSEÅR:',
+                                Text(
+                                  'FÖDELSEÅR:',
                                   style: TextStyle(
                                     fontSize: 15,
                                     fontWeight: FontWeight.w800,
                                   ),
                                 ),
-                                Text('2000',
+                                Text(
+                                  '2000',
                                   style: TextStyle(
                                     fontSize: 15,
                                     fontWeight: FontWeight.w400,
@@ -174,176 +200,142 @@ class LogInViewState extends State {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 DropDownButtonUsed(
-                      items: games,
-                      selectedItem: selectedGame,
-                      onChange: (String newValue) {
-                    setState(() {
-                      selectedGame = newValue;
-                    });
-                  }),
+                    items: games,
+                    selectedItem: selectedGame,
+                    onChange: (String newValue) {
+                      setState(() {
+                        selectedGame = newValue;
+                      });
+                    }),
                 const SizedBox(
                   height: 40,
                   width: 30,
                 ),
                 Container(
-                  decoration: BoxDecoration(
-                    color: Colors.grey[50],
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  height: 250,
-                  width: 500,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget> [
-                      Row(
-                        children: [
-                          GestureDetector(
-                            onTap: () {
-                              //locator<NavigationService>().navigateTo(HannesGRoute);
-                              statsHeatmap = true;
-                              statsColor = Colors.black;
-                              heatColor = Colors.black54;
-                              boxHeight1 = 120;
-                              boxHeightGap = 40;
-                              },
-
-                            child:
-                              Container(
-                                height: 50,
-                                width: 250,
-                                decoration: const BoxDecoration(
-                                  //border: Border.all(
-                                    //color: Colors.black,
-                                    //width: 1,
-                                 // ),
-                                  borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(10),
-                                  ),
-                                ),
-                                child: Align(
-                                  alignment: Alignment.center,
-                                  child:
-                                    Text('STATISTIK',
-                                      style: TextStyle(
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.w800,
-                                        color: statsColor,
-                                      ),
-                                    ),
-                                ),
-                              ),
+                    decoration: BoxDecoration(
+                      color: Colors.grey[50],
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    height: 250,
+                    width: 500,
+                    child: Column(
+                      children: [
+                        TabBar(
+                          labelStyle: const TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w800,
+                            fontFamily: 'Open Sans',
                           ),
-                          GestureDetector(
-                            onTap: () {
-                              //locator<NavigationService>().navigateTo(HannesGRoute);
-                              statsHeatmap = false;
-                              statsColor = Colors.black54;
-                              heatColor = Colors.black;
-                              boxHeight1 = 154;
-                              boxHeightGap = 20;
-                              },
-                            child:
-                            Container(
-                              height: 50,
-                              width: 250,
-                              decoration: const BoxDecoration(
-                                //border: Border.all(
-                                  //color: Colors.black,
-                                  //width: 1,
-                                //),
-                                borderRadius: BorderRadius.only(
-                                  topRight: Radius.circular(10),
-                                ),
-                              ),
-                              child: Align(
-                                alignment: Alignment.center,
-                                child:
-                                Text('HEATMAP',
-                                  style: TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.w800,
-                                    color: heatColor,
-                                  ),
-                                ),
-                              ),
+                          indicatorColor: Colors.transparent,
+                          unselectedLabelColor: Colors.black54,
+                          labelColor: Colors.black,
+                          tabs: const [
+                            Tab(
+                              text: 'STATISTIK',
                             ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: boxHeightGap as double,
-                        width: 30,
-                      ),
-                      SizedBox(
-                        width: 410,
-                        height: boxHeight1 as double,
-                        child: statsHeatmap == true
-    ?
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const Text('UPPMÄTT MAXHASTIGHET:',
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w800,
-                                  ),
-                                ),
-                                Text('${hannesSpeed[games.indexOf(selectedGame)]}    [m/s]',
-                                  style: const TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const Text('MAXIMALT UPPMÄTT\n ACCELERATION:',
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w800,
-                                  ),
-                                ),
-                                Text('${hannesAcc[games.indexOf(selectedGame)]}    [m/s^2]',
-                                  style: const TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const Text('FÄRDAD DISTANS:',
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w800,
-                                  ),
-                                ),
-                                Text('${hannesDistance[games.indexOf(selectedGame)]}    [km]',
-                                  style: const TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                ),
-                              ],
-                            ),
+                            Tab(text: 'HEATMAP')
                           ],
-                        )
-                        : HannesHeatmap(coordinatesY2: hannesYCoordinates, coordinatesX1: hannesXCoordinates,),
-                      ),
-                    ],
-                  ),
-                ),
+                          controller: _tabController,
+                        ),
+                        Expanded(
+                          child: TabBarView(
+                            children: [
+                              Center(
+                                child: SizedBox(
+                                  width: 410,
+                                  height: 120,
+                                  child: Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          const Text(
+                                            'UPPMÄTT MAXHASTIGHET:',
+                                            style: TextStyle(
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.w800,
+                                            ),
+                                          ),
+                                          Text(
+                                            '${hannesSpeed[games.indexOf(selectedGame)]}    [m/s]',
+                                            style: const TextStyle(
+                                              fontSize: 15,
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          const Text(
+                                            'MAXIMALT UPPMÄTT\n ACCELERATION:',
+                                            style: TextStyle(
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.w800,
+                                            ),
+                                          ),
+                                          Text(
+                                            '${hannesAcc[games.indexOf(selectedGame)]}    [m/s^2]',
+                                            style: const TextStyle(
+                                              fontSize: 15,
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          const Text(
+                                            'FÄRDAD DISTANS:',
+                                            style: TextStyle(
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.w800,
+                                            ),
+                                          ),
+                                          Text(
+                                            '${hannesDistance[games.indexOf(selectedGame)]}    [km]',
+                                            style: const TextStyle(
+                                              fontSize: 15,
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              Center(
+                                child: SizedBox(
+                                  width: 410,
+                                  height: 154,
+                                  child: HannesHeatmap(
+                                    coordinatesY2: hannesYCoordinates[games.indexOf(selectedGame)],
+                                    coordinatesX1: hannesXCoordinates[games.indexOf(selectedGame)],
+                                  ),
+                                ),
+                              ),
+                            ],
+                            controller: _tabController,
+                          ),
+                        ),
+                      ],
+                    )),
               ],
             ),
           ],
@@ -352,6 +344,3 @@ class LogInViewState extends State {
     );
   }
 }
-
-
-
