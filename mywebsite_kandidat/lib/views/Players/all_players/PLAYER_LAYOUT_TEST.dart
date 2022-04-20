@@ -1,38 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:mywebsite_kandidat/views/hannes_heatmap/HANNES_HEATMAP.dart';
-import 'package:mywebsite_kandidat/widgets/login_button/login_button.dart';
-import 'package:mywebsite_kandidat/widgets/navigation_bar/navbar_item.dart';
 import '../../../Dropdown/dropdown_PLAYER.dart';
-import '../../../Dropdown/dropdown_button_name.dart';
-import '../../../locator.dart';
-import '../../../routing/route_names.dart';
-import '../../../services/navigation_service.dart';
-import '../players_view.dart';
 
 var games = [
-  'Elfhög (H)',
-  'Tranemo (B)',
-  'Lockerud (B)',
+  'Match 1',
+  'Match 2',
+  'Match 3',
 ];
 
-var hannesSpeed = [10, 11, 12];
-var hannesAcc = [20, 21, 22];
-var hannesDistance = [30, 31, 32];
-
-var hannesXCoordinatesGame1 = [14, 53, 53, 23, 89, 390, 239, 310];
-var hannesYCoordinatesGame1 = [80, 123, 153, 3, 189, 90, 139, 110];
-
-var hannesXCoordinatesGame2 = [];
-var hannesYCoordinatesGame2 = [];
-
-var hannesXCoordinatesGame3 = [114, 153, 153, 223, 289, 90, 39, 210];
-var hannesYCoordinatesGame3 = [180, 12, 53, 39, 19, 190, 39, 10];
-
-var hannesXCoordinates = [hannesXCoordinatesGame1, hannesXCoordinatesGame2, hannesXCoordinatesGame3];
-var hannesYCoordinates = [hannesYCoordinatesGame1, hannesYCoordinatesGame2, hannesYCoordinatesGame3];
-
 class PlayerLayoutView extends StatefulWidget {
-  const PlayerLayoutView({Key? key}) : super(key: key);
+
+  const PlayerLayoutView({Key? key, required this.title, required this.number, required this.position,
+    required this.birthYear, required this.picture, required this.speed,
+    required this.acc, required this.dist, required this.xCoords, required this.yCoords}) : super(key: key);
+
+  final String title;
+  final String number;
+  final String position;
+  final String birthYear;
+  final String picture;
+
+  final speed;
+  final acc;
+  final dist;
+  final xCoords;
+  final yCoords;
 
   @override
   State createState() => LogInViewState();
@@ -48,6 +40,7 @@ class LogInViewState extends State<PlayerLayoutView>
   var boxHeightGap = 40;
 
   late TabController _tabController;
+
 
   @override
   void initState() {
@@ -91,7 +84,7 @@ class LogInViewState extends State<PlayerLayoutView>
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(10),
                           child: Image.network(
-                            'assets/floorball.jpg',
+                            widget.picture,
                             fit: BoxFit.fill,
                           ),
                         ),
@@ -110,8 +103,8 @@ class LogInViewState extends State<PlayerLayoutView>
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const [
-                                Text(
+                              children: [
+                                const Text(
                                   'NAMN:',
                                   style: TextStyle(
                                     fontSize: 15,
@@ -119,8 +112,8 @@ class LogInViewState extends State<PlayerLayoutView>
                                   ),
                                 ),
                                 Text(
-                                  'Hannes Gustafsson',
-                                  style: TextStyle(
+                                  widget.title,
+                                  style: const TextStyle(
                                     fontSize: 15,
                                     fontWeight: FontWeight.w400,
                                   ),
@@ -130,8 +123,8 @@ class LogInViewState extends State<PlayerLayoutView>
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const [
-                                Text(
+                              children: [
+                                const Text(
                                   'POSITION:',
                                   style: TextStyle(
                                     fontSize: 15,
@@ -139,8 +132,8 @@ class LogInViewState extends State<PlayerLayoutView>
                                   ),
                                 ),
                                 Text(
-                                  'Center',
-                                  style: TextStyle(
+                                  widget.position,
+                                  style: const TextStyle(
                                     fontSize: 15,
                                     fontWeight: FontWeight.w400,
                                   ),
@@ -150,8 +143,8 @@ class LogInViewState extends State<PlayerLayoutView>
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const [
-                                Text(
+                              children: [
+                                const Text(
                                   'NUMMER:',
                                   style: TextStyle(
                                     fontSize: 15,
@@ -159,8 +152,8 @@ class LogInViewState extends State<PlayerLayoutView>
                                   ),
                                 ),
                                 Text(
-                                  '26',
-                                  style: TextStyle(
+                                  widget.number,
+                                  style: const TextStyle(
                                     fontSize: 15,
                                     fontWeight: FontWeight.w400,
                                   ),
@@ -170,8 +163,8 @@ class LogInViewState extends State<PlayerLayoutView>
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const [
-                                Text(
+                              children: [
+                                const Text(
                                   'FÖDELSEÅR:',
                                   style: TextStyle(
                                     fontSize: 15,
@@ -179,8 +172,8 @@ class LogInViewState extends State<PlayerLayoutView>
                                   ),
                                 ),
                                 Text(
-                                  '2000',
-                                  style: TextStyle(
+                                  widget.birthYear,
+                                  style: const TextStyle(
                                     fontSize: 15,
                                     fontWeight: FontWeight.w400,
                                   ),
@@ -264,7 +257,7 @@ class LogInViewState extends State<PlayerLayoutView>
                                             ),
                                           ),
                                           Text(
-                                            '${hannesSpeed[games.indexOf(selectedGame)]}    [m/s]',
+                                            '${widget.speed[games.indexOf(selectedGame)]}    [m/s]',
                                             style: const TextStyle(
                                               fontSize: 15,
                                               fontWeight: FontWeight.w400,
@@ -286,7 +279,7 @@ class LogInViewState extends State<PlayerLayoutView>
                                             ),
                                           ),
                                           Text(
-                                            '${hannesAcc[games.indexOf(selectedGame)]}    [m/s^2]',
+                                            '${widget.acc[games.indexOf(selectedGame)]}    [m/s^2]',
                                             style: const TextStyle(
                                               fontSize: 15,
                                               fontWeight: FontWeight.w400,
@@ -308,7 +301,7 @@ class LogInViewState extends State<PlayerLayoutView>
                                             ),
                                           ),
                                           Text(
-                                            '${hannesDistance[games.indexOf(selectedGame)]}    [km]',
+                                            '${widget.dist[games.indexOf(selectedGame)]}    [km]',
                                             style: const TextStyle(
                                               fontSize: 15,
                                               fontWeight: FontWeight.w400,
@@ -325,8 +318,8 @@ class LogInViewState extends State<PlayerLayoutView>
                                   width: 410,
                                   height: 154,
                                   child: HannesHeatmap(
-                                    coordinatesY2: hannesYCoordinates[games.indexOf(selectedGame)],
-                                    coordinatesX1: hannesXCoordinates[games.indexOf(selectedGame)],
+                                    coordinatesY2: widget.yCoords[games.indexOf(selectedGame)],
+                                    coordinatesX1: widget.xCoords[games.indexOf(selectedGame)],
                                   ),
                                 ),
                               ),

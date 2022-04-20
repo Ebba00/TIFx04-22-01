@@ -10,9 +10,9 @@ var maxValue = 0;
 var allPositions = 0;
 
 
-var List<List<int>> matrix2 = List.generate(
+List<List<int>> matrix2 = List.generate(
     rows, (i) => List.generate(columns, (j) => 0));
-var List<List<Color>> matrixColour = List.generate(
+List<List<Color>> matrixColour = List.generate(
     rows, (i) => List.generate(columns, (j) => Colors.white));
 
 // matrix[10][20];

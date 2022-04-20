@@ -1,8 +1,10 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:mywebsite_kandidat/views/hannes_heatmap/Ebba_heatmap/field_area2.dart';
 import 'Ebba_heatmap.dart';
 
-matrixColour = colouredMatrix();
+// matrixColour = colouredMatrix();
 
 class EbbaView extends StatelessWidget {
   const EbbaView({Key? key}) : super(key: key);

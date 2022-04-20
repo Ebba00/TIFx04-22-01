@@ -1,32 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:mywebsite_kandidat/views/Players/stats_view.dart';
-
-import '../../routing/route_names.dart';
-import '../../widgets/navigation_bar/navbar_item.dart';
 import '../../widgets/player_button/player_button.dart';
 
-class Player{
-  var name; // Later added by coach
-  var id; // Id it gets when created - connected with a picture?
-  var number; // Later added by coach, or updated if found
-  var position; // Added by coach for each player
-  var team; // Later added or changed by coach
-  var heatMap;  // Created by us
-  var highSpeed;  // Created by us
-  final otherIDs = <int> [];  // List of ids connected to the same person
+var speedNumber1 = [10, 11, 12];
+var accNumber1 = [20, 21, 22];
+var distanceNumber1 = [30, 31, 32];
+var xCoordinatesNumber1 = [[14, 53, 53, 23, 89, 390, 239, 310],
+  [], [114, 153, 153, 223, 289, 90, 39, 210]];
+var yCoordinatesNumber1 = [[80, 123, 153, 3, 189, 90, 139, 110],
+  [], [180, 12, 53, 39, 19, 190, 39, 10]];
 
-  Player(var id){
-    this.id = id;
-  }
-}
-// if two (or more) players have the same number, name and team they get added
-// together into one person
+var speedNumber2 = [100, 101, 102];
+var accNumber2 = [200, 201, 202];
+var distanceNumber2 = [300, 301, 302];
+var xCoordinatesNumber2 = [[], [], []];
+var yCoordinatesNumber2 = [[], [], []];
 
-class Team{
-  var name; // Later added or changed by coach
-  var colour; // Maybe not needed
-  final players = <Player> [];  // list of all players in this team
-}
+
+
+
 
 class PlayersView extends StatelessWidget {
   const PlayersView({Key? key}) : super(key: key);
@@ -37,95 +28,6 @@ class PlayersView extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children:  [
         const SizedBox(height: 40,),
-        /*const Align(
-          alignment: Alignment.center,
-          child: Text('Lägg till en spelare i ditt lag',
-            style: TextStyle(
-              fontWeight: FontWeight.w800,
-              fontSize: 30,
-              color: Colors.black,
-            ),),),
-        SizedBox(height: 30,),
-    Row(
-    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-    mainAxisSize: MainAxisSize.max,
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-        Container(
-          width: 275,
-          height: 50,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-          ),
-          child: TextField(
-           // controller: myControllerMail,
-            decoration: const InputDecoration(
-              hintText: 'Ange namn på spelaren',
-              border: OutlineInputBorder(),
-            ),
-          ),
-        ),
-        SizedBox(height: 15,),
-        Container(
-          width: 275,
-          height: 50,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-          ),
-          child: TextField(
-         //   controller: myControllerMail,
-            decoration: const InputDecoration(
-              hintText: 'Ange spelarnummer',
-              border: OutlineInputBorder(),
-            ),
-          ),
-        ),
-        SizedBox(height: 15,),
-        Container(
-          width: 275,
-          height: 50,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-          ),
-          child: TextField(
-            //   controller: myControllerMail,
-            decoration: const InputDecoration(
-              hintText: 'Ange spelarens position',
-              border: OutlineInputBorder(),
-            ),
-          ),
-        ),
-        ],
-    ),
-        SizedBox(height: 15,),
-        SizedBox(
-          height: 40,
-          width: 200,
-          child: ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              primary: const Color.fromARGB(255, 31, 229, 146), // background
-              onPrimary: const Color.fromARGB(255, 31, 229, 146), // foreground
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
-              ),
-            ),
-            child: const Text(
-
-              'LÄGG TILL',
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w800,
-                color: Colors.white,
-              ),
-            ),
-            onPressed: () {
-
-              // lägg till spelare i teamet och spelarlista
-            },
-         ),
-        ),
-
-         */
         const Align(
           alignment: Alignment.center,
           child: Text('Mitt lag',
@@ -152,52 +54,97 @@ class PlayersView extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
-              children: const [
-                PlayerButton( title: '1. Hannes Gustafsson', navigationPath: HannesGRoute,),
-                SizedBox(height: 30,),
-                PlayerButton( title: '6. Gustav Hannesson', navigationPath: HannesGRoute,),
-                SizedBox(height: 30,),
-                PlayerButton( title: '11. Oskar Kullner', navigationPath: HannesGRoute,),
+              children: [
+                PlayerButton( title: 'Lars Andersson', number: '3', birthYear: '1992',
+                  position: 'Back', picture: 'assets/playericon.jpg', dist: distanceNumber2,
+                  yCoords: yCoordinatesNumber2, acc: accNumber2, xCoords: xCoordinatesNumber2,
+                  speed: speedNumber2,),
+                const SizedBox(height: 30,),
+                PlayerButton( title: 'Mikael Johansson', number: '13', birthYear: '1995',
+                  position: 'Center', picture: 'assets/playericon.jpg', dist: distanceNumber1,
+                  yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
+                  speed: speedNumber1,),
+                const SizedBox(height: 30,),
+                PlayerButton( title: 'Anders Karlsson', number: '19', birthYear: '1990',
+                  position: 'Forward', picture: 'assets/playericon.jpg', dist: distanceNumber1,
+                  yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
+                  speed: speedNumber1,),
               ],),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
-              children: const [
-                PlayerButton( title: '2. Victor Salomonsson', navigationPath: HannesGRoute,),
-                SizedBox(height: 30,),
-                PlayerButton( title: '7. Pontus Johansson', navigationPath: HannesGRoute,),
-                SizedBox(height: 30,),
-                PlayerButton( title: '12. Hamza Jašarević', navigationPath: HannesGRoute,),
+              children: [
+                PlayerButton( title: 'Johan Nilsson', number: '4', birthYear: '2001',
+                  position: 'Back', picture: 'assets/playericon.jpg', dist: distanceNumber1,
+                  yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
+                  speed: speedNumber1,),
+                const SizedBox(height: 30,),
+                PlayerButton( title: 'Erik Larsson', number: '15', birthYear: '2000',
+                  position: 'Forward', picture: 'assets/playericon.jpg', dist: distanceNumber1,
+                  yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
+                  speed: speedNumber1,),
+                const SizedBox(height: 30,),
+                PlayerButton( title: 'Per Eriksson', number: '25', birthYear: '1987',
+                  position: 'Back', picture: 'assets/playericon.jpg', dist: distanceNumber1,
+                  yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
+                  speed: speedNumber1,),
               ],),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
-              children: const [
-                PlayerButton( title: '3. Ebba Molinder', navigationPath: HannesGRoute,),
-                SizedBox(height: 30,),
-                PlayerButton( title: '8. Pontus Salomonsson', navigationPath: HannesGRoute,),
-                SizedBox(height: 30,),
-                PlayerButton( title: '13. Oskar Gustafsson', navigationPath: HannesGRoute,),
+              children: [
+                PlayerButton( title: 'Peter Olsson', number: '7', birthYear: '1995',
+                  position: 'Forward', picture: 'assets/playericon.jpg', dist: distanceNumber1,
+                  yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
+                  speed: speedNumber1,),
+                const SizedBox(height: 30,),
+                PlayerButton( title: 'Thomas Persson', number: '16', birthYear: '1995',
+                  position: 'Back', picture: 'assets/playericon.jpg', dist: distanceNumber1,
+                  yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
+                  speed: speedNumber1,),
+                const SizedBox(height: 30,),
+                PlayerButton( title: 'Karl Svensson', number: '29', birthYear: '2003',
+                  position: 'Forward', picture: 'assets/playericon.jpg', dist: distanceNumber1,
+                  yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
+                  speed: speedNumber1,),
               ],),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
-              children: const [
-                PlayerButton( title: '4. Hamza Kullner', navigationPath: HannesGRoute,),
-                SizedBox(height: 30,),
-                PlayerButton( title: '9. Pontus Molinder', navigationPath: HannesGRoute,),
-                SizedBox(height: 30,),
-                PlayerButton( title: '14. Hannes Jašarević', navigationPath: HannesGRoute,),
+              children: [
+                PlayerButton( title: 'Jan Gustafsson', number: '9', birthYear: '1985',
+                  position: 'Back', picture: 'assets/playericon.jpg', dist: distanceNumber1,
+                  yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
+                  speed: speedNumber1,),
+                const SizedBox(height: 30,),
+                PlayerButton( title: 'Rickard Sundström', number: '17', birthYear: '1999',
+                  position: 'Center', picture: 'assets/playericon.jpg', dist: distanceNumber1,
+                  yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
+                  speed: speedNumber1,),
+                const SizedBox(height: 30,),
+                PlayerButton( title: 'Magnus Jansson', number: '47', birthYear: '2000',
+                  position: 'Back', picture: 'assets/playericon.jpg', dist: distanceNumber1,
+                  yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
+                  speed: speedNumber1,),
               ],),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
-              children: const [
-                PlayerButton( title: '5. Victor Johansson', navigationPath: HannesGRoute,),
-                SizedBox(height: 30,),
-                PlayerButton( title: '10. Ebba Johansson', navigationPath: HannesGRoute,),
-                SizedBox(height: 30,),
-                PlayerButton( title: '15. Oskar Salomonsson', navigationPath: HannesGRoute,),
+              children: [
+                PlayerButton( title: 'Albin Stensson', number: '10', birthYear: '2001',
+                  position: 'Forward', picture: 'assets/playericon.jpg', dist: distanceNumber1,
+                  yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
+                  speed: speedNumber1,),
+                const SizedBox(height: 30,),
+                PlayerButton( title: 'Isak Forsström', number: '18', birthYear: '1998',
+                  position: 'Center', picture: 'assets/playericon.jpg', dist: distanceNumber1,
+                  yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
+                  speed: speedNumber1,),
+                const SizedBox(height: 30,),
+                PlayerButton( title: 'Emil Rhenberg', number: '83', birthYear: '1997',
+                  position: 'Forward', picture: 'assets/playericon.jpg', dist: distanceNumber1,
+                  yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
+                  speed: speedNumber1,),
               ],),
           ],
         ),
