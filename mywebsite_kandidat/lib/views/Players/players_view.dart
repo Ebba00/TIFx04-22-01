@@ -128,7 +128,7 @@ class PlayersView extends StatelessWidget {
          */
         const Align(
           alignment: Alignment.center,
-          child: Text('MITT LAG',
+          child: Text('Mitt lag',
             style: TextStyle(
               fontWeight: FontWeight.w800,
               fontSize: 30,

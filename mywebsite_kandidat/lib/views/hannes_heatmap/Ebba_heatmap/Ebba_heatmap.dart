@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 
-var xCoord = [14, 53, 53, 23, 89, 390, 239, 310];
-var yCoord = [80, 123, 153, 3, 189, 90, 139, 110];
+var xCoord = [14, 53, 53, 23, 89, 390, 239, 310, 14, 53, 53, 23, 89, 390, 239, 310, 14, 53, 53, 23, 89, 390, 239, 310, 14, 53, 53, 23, 89, 390, 239, 310, 14, 53, 53, 23, 89, 390, 239, 310, 14, 53, 53, 23, 89, 390, 239, 310];
+var yCoord = [80, 123, 153, 3, 189, 90, 139, 110, 80, 123, 153, 3, 189, 90, 139, 110, 80, 123, 153, 3, 189, 90, 139, 110, 80, 123, 153, 3, 189, 90, 139, 110, 80, 123, 153, 3, 189, 90, 139, 110, 80, 123, 153, 3, 189, 90, 139, 110];
 
 var columns = 20;	// x
 var rows = 10;	// y
@@ -60,7 +60,7 @@ List<List<Color>> colouredMatrix() {
       else if (position > 0.4 * allPositions) {
         matrixColour[row][col] = const Color.fromRGBO(61, 97, 153, 1.0);
       }
-      else if (position > 0.3 * allPositions) {
+      else if (position > 3) {
         matrixColour[row][col] = const Color.fromRGBO(85, 119, 170, 1.0);
       }
       else if (position > 0.2 * allPositions) {
