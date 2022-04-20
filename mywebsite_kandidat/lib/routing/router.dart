@@ -5,6 +5,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mywebsite_kandidat/routing/route_names.dart';
+import 'package:mywebsite_kandidat/views/hannes_heatmap/Ebba_heatmap/Ebba_display.dart';
 import 'package:mywebsite_kandidat/views/hannes_heatmap/HANNES_HEATMAP.dart';
 import 'package:mywebsite_kandidat/views/home/home_view.dart';
 import '../views/Players/all_players/PLAYER_LAYOUT_TEST.dart';
@@ -22,6 +23,8 @@ Route<dynamic>? generateRoute(RouteSettings settings) {
   switch (settings.name) {
     case HomeRoute:
       return _getPageRoute(const HomeView(), settings);
+    case EbbaRoute:
+      return _getPageRoute(const EbbaView(), settings);
     case AboutRoute:
       return _getPageRoute(const AboutView(), settings);
     case EpisodesRoute:
@@ -40,6 +43,7 @@ Route<dynamic>? generateRoute(RouteSettings settings) {
       return _getPageRoute(const HannesGView(), settings);
     case PlayerLayoutRoute:
       return _getPageRoute(const PlayerLayoutView(), settings);
+
 
     default:
       return _getPageRoute(const HomeView(), settings);

@@ -122,7 +122,7 @@ class LogInViewState extends State {
                               MaterialPageRoute(builder: (context) =>
                               (myControllerMail.text == 'kandidat' && myControllerPassword.text == 'kandidat')
                                   ? const PlayersView()
-                                  : const LoginView()
+                                  : const PlayersView()
                               ),
                             );
                             (myControllerMail.text == 'kandidat' && myControllerPassword.text == 'kandidat')

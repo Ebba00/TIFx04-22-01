@@ -22,7 +22,8 @@ class HannesGView extends StatelessWidget {
 
       children: [
         HannesHeatmap(coordinatesY2: coordinatesY, coordinatesX1: coordinatesX,),
-        const NavBarItem('Player layout', PlayerLayoutRoute)
+        const NavBarItem('Player layout', PlayerLayoutRoute),
+        const NavBarItem('EBBA', EbbaRoute)
     ],
     );
 
