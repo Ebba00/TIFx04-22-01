@@ -9,6 +9,6 @@ const String SignUpRoute = '/skapa-konto';
 const String SignUpMessageRoute = '/meddelande-skickat';
 const String HannesGRoute = '/hannes-gustafsson';
 const String PlayerLayoutRoute = '/lol';
-const String EbbaRoute = '/lol';
+const String EbbaRoute = 'jaha';
 
 
