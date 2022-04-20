@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mywebsite_kandidat/views/hannes_heatmap/Ebba_heatmap/field_area2.dart';
 import 'Ebba_heatmap.dart';
 
-final List<List<Color>> matrixColourfirst = List.generate(
-    rows, (i) => List.generate(columns, (j) => Colors.white));
-final List<List<Color>> matrixColour = colouredMatrix(matrixColourfirst);
+matrixColour = colouredMatrix();
 
 class EbbaView extends StatelessWidget {
   const EbbaView({Key? key}) : super(key: key);

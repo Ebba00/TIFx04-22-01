@@ -10,14 +10,16 @@ var maxValue = 0;
 var allPositions = 0;
 
 
-final List<List<int>> matrix2 = List.generate(
+var List<List<int>> matrix2 = List.generate(
     rows, (i) => List.generate(columns, (j) => 0));
+var List<List<Color>> matrixColour = List.generate(
+    rows, (i) => List.generate(columns, (j) => Colors.white));
 
 // matrix[10][20];
 
 // coordinatesMaxX = 400;
 // coordinatesMaxY = 200;
-List<List<Color>> colouredMatrix(List<List<Color>> matrixColour) {
+List<List<Color>> colouredMatrix() {
   for (var i = 0; i < xCoord.length; i++) { // xCoord.length == yCoord.length
     int xNew = (xCoord[i] / 20).round();
     int yNew = (yCoord[i] / 20).round();
