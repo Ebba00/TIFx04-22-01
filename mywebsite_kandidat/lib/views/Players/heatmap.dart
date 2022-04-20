@@ -4,18 +4,11 @@ import 'package:flutter/material.dart';
 
 
 List<List<int>> randomMatrix(List<List<int>> matrix){
-
   for (var i = 0; i < 90; i++){
     for (var j = 0; j < 90; j++){
-      if (i == 45 && j == 25){
-        matrix[i][j] = 7;
-      }
-      else if (i % 10 == 0 && j % 10 == 0){
-        matrix[i][j] = 2;
-      }
+      matrix[0][0] = 1;
     }
   }
-  print(matrix);
   return matrix;
 }
 
