@@ -6,19 +6,18 @@ import 'package:mywebsite_kandidat/Dropdown/dropdown_button_name.dart';
 import '../../Dropdown/drop_down_game.dart';
 import '../../Dropdown/dropdown_button_name.dart';
 import '../../VARIABLES.dart';
-import '../../widgets/episodes_details/episodes_heatmap.dart';
 
 
 var names = [
-  'Hannes Gustafsson',
-  'Ebba Molinder',
-  'Oskar Kullner',
+  'Spelare 1',
+  'Spelare 2',
+  'Spelare 3',
 ];
 
 var games = [
-  'Elfhög',
-  'Tranemo',
-  'Lockerud',
+  'Match 1',
+  'Match 2',
+  'Match 3',
 ];
 
 var hannesSpeed = [10,11,12];
