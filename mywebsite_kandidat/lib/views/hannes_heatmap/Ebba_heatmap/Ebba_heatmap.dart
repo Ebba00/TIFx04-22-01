@@ -34,42 +34,53 @@ List<List<Color>> colouredMatrix() {
     if (maxValue < matrix2[yNew][xNew]) {
       maxValue = matrix2[yNew][xNew];
     }
+    print(matrix2);
   }
 
   // row = y, col = x
   for (var row = 0; row < 10; row++) {
     for (var col = 0; col < 20; col++) {
+      print(matrixColour);
       // colour each area
       var position = matrix2[row][col];
       if (position == maxValue) {
+        print('maxPosition');
         position = position + 3;
       }
       if (position > 0.8 * allPositions) {
-        matrixColour[row][col] =
-        const Color.fromRGBO(0, 34, 85, 1.0); // Darkest
+        print('1');
+        matrixColour[row][col] = const Color.fromRGBO(0, 34, 85, 1.0); // Darkest
       }
       else if (position > 0.7 * allPositions) {
+        print('2');
         matrixColour[row][col] = const Color.fromRGBO(10, 46, 102, 1.0);
       }
       else if (position > 0.6 * allPositions) {
+        print('3');
         matrixColour[row][col] = const Color.fromRGBO(23, 61, 119, 1.0);
       }
       else if (position > 0.5 * allPositions) {
+        print('4');
         matrixColour[row][col] = const Color.fromRGBO(40, 78, 136, 1.0);
       }
       else if (position > 0.4 * allPositions) {
+        print('5');
         matrixColour[row][col] = const Color.fromRGBO(61, 97, 153, 1.0);
       }
       else if (position > 3) {
+        print('6');
         matrixColour[row][col] = const Color.fromRGBO(85, 119, 170, 1.0);
       }
       else if (position > 0.2 * allPositions) {
+        print('7');
         matrixColour[row][col] = const Color.fromRGBO(112, 142, 187, 1.0);
       }
       else if (position > 0.1 * allPositions) {
+        print('8');
         matrixColour[row][col] = const Color.fromRGBO(142, 167, 204, 1.0);
       }
     }
   }
+  print(matrixColour);
   return matrixColour;
 }
