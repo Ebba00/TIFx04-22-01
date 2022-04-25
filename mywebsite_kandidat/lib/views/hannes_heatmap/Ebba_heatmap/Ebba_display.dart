@@ -288,7 +288,6 @@ class EbbaView extends StatelessWidget {
                   FieldArea2(fieldColor: matrixColour[8][19],),
                   FieldArea2(fieldColor: matrixColour[9][19],),
                 ],),
-
             ],
           ),
         ),
