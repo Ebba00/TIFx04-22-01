@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../widgets/player_button/player_button.dart';
+import 'all_players/playerObject.dart';
 
 var speedNumber1 = [10, 11, 12];
 var accNumber1 = [20, 21, 22];
@@ -15,9 +16,13 @@ var distanceNumber2 = [300, 301, 302];
 var xCoordinatesNumber2 = [[], [], []];
 var yCoordinatesNumber2 = [[], [], []];
 
+List<String> playersName = ['Kungen', 'Drottningen',
+  'Anna Nilsson', 'Hassan Mohammed', 'Liam Neeson', 'Hannes Gustafsson',
+  'Hamza Jašarević', 'Pontus Johansson', 'Oskar Kullner', 'Ebba Molinder',
+  'Victor Salomonsson', 'Elsa Beskow', 'Gustav Vasa', 'Albert Einstein',
+  'Isaac Newton', 'Marie Curie', 'Nicola Tesla', 'WIlliam Chalmers'];
 
-
-
+Team team1 = new Team('Chalmers IBK Elit', 'Pride', playersName); // Byt ut playersName mot list of players
 
 class PlayersView extends StatelessWidget {
   const PlayersView({Key? key}) : super(key: key);

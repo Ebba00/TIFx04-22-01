@@ -1,13 +1,9 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:mywebsite_kandidat/views/hannes_heatmap/Ebba_heatmap/field_area2.dart';
 import 'Ebba_heatmap.dart';
 
-
 class EbbaView extends StatelessWidget {
   const EbbaView({Key? key}) : super(key: key);
-
 
   @override
   Widget build(BuildContext context) {
