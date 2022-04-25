@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 var xCoord = [14, 53, 53, 23, 89, 390, 239, 310, 14, 53, 53, 23, 89, 390, 239, 310, 14, 53, 53, 23, 89, 390, 239, 310, 14, 53, 53, 23, 89, 390, 239, 310, 14, 53, 53, 23, 89, 390, 239, 310, 14, 53, 53, 23, 89, 390, 239, 310];
 var yCoord = [80, 123, 153, 3, 189, 90, 139, 110, 80, 123, 153, 3, 189, 90, 139, 110, 80, 123, 153, 3, 189, 90, 139, 110, 80, 123, 153, 3, 189, 90, 139, 110, 80, 123, 153, 3, 189, 90, 139, 110, 80, 123, 153, 3, 189, 90, 139, 110];
 
-var columns = 20;	// x
-var rows = 10;	// y
+var columns = 21;	// x
+var rows = 11;	// y
 var maxValue = 0;
 var allPositions = 0;
 
@@ -14,7 +14,6 @@ List<List<int>> matrix2 = List.generate(
     rows, (i) => List.generate(columns, (j) => 0));
 List<List<Color>> matrixColour = List.generate(
     rows, (i) => List.generate(columns, (j) => Colors.white));
-
 // matrix[10][20];
 
 // coordinatesMaxX = 400;
@@ -22,11 +21,13 @@ List<List<Color>> matrixColour = List.generate(
 List<List<Color>> colouredMatrix() {
   for (var i = 0; i < xCoord.length; i++) { // xCoord.length == yCoord.length
     int xNew = (xCoord[i] / 20).round();
+    print(xNew);
     int yNew = (yCoord[i] / 20).round();
-    if (xNew > columns) {
+    print(yNew);
+    if (xNew > columns-1) {
       xNew = columns;
     }
-    if (yNew > rows) {
+    if (yNew > rows-1) {
       yNew = rows;
     }
     matrix2[yNew][xNew]++;
@@ -40,7 +41,6 @@ List<List<Color>> colouredMatrix() {
   // row = y, col = x
   for (var row = 0; row < 10; row++) {
     for (var col = 0; col < 20; col++) {
-      print(matrixColour);
       // colour each area
       var position = matrix2[row][col];
       if (position == maxValue) {
@@ -81,6 +81,5 @@ List<List<Color>> colouredMatrix() {
       }
     }
   }
-  print(matrixColour);
   return matrixColour;
 }
