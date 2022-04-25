@@ -1,4 +1,4 @@
--import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import '../../routing/route_names.dart';
 import '../../widgets/navigation_bar/navbar_logo.dart';
 import 'heatmap.dart';
