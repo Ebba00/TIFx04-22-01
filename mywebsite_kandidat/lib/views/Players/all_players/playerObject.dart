@@ -4,6 +4,9 @@ class Match{
   late String name;
   late List<int> xPositions;
   late List<int> yPositions;
+  Match(String name){
+    this.name = name;
+  }
 }
 
 class Player{
@@ -19,10 +22,11 @@ class Player{
   late int maxAcc;
   final otherIDs = <int> [];  // List of ids connected to the same person
 
-  Player(String name, int number, int birthYear){
+  Player(String name, int number, int birthYear, String positionInGame){
     this.name = name;
     this.number = number;
     this.birthYear = birthYear;
+    this.positionInGame = positionInGame;
   }
 }
 // if two (or more) players have the same number, name and team they get added

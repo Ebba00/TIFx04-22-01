@@ -20,22 +20,43 @@ List<String> playersName = ['Kungen', 'Drottningen',
   'Anna Nilsson', 'Hassan Mohammed', 'Liam Neeson', 'Hannes Gustafsson',
   'Hamza Jašarević', 'Pontus Johansson', 'Oskar Kullner', 'Ebba Molinder',
   'Victor Salomonsson', 'Elsa Beskow', 'Gustav Vasa', 'Albert Einstein',
-  'Isaac Newton', 'Marie Curie', 'Nicola Tesla', 'WIlliam Chalmers'];
-
-Team team1 = new Team('Chalmers IBK Elit', 'Pride', playersName); // Byt ut playersName mot list of players
-
+  'Isaac Newton', 'Marie Curie', 'Nikola Tesla', 'William Chalmers'];
+List<int> playersNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,
+  16, 17, 18];
+List<int> playersBirthYear = [1946, 1943, 1978, 1999, 1952, 2000, 2000, 1993,
+  1996, 2000, 2000, 1874, 1496, 1879, 1643, 1867, 1856, 1748];
+List<String> playerPositions = ['Målvakt', 'Målvakt', 'Back', 'Back', 'Forward',
+  'Forward', 'Forward', 'Center', 'Forward', 'Forward', 'Center', 'Center',
+  'Back', 'Back', 'Forward', 'Back', 'Back', 'Forward'];
+int a = 0;
+List<String> nameOfMatches = ['Match1', 'Match2', 'Match3'];
+List<Match> matchObj = [];
+List<Player> playersObj = [];
 class PlayersView extends StatelessWidget {
   const PlayersView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+
+    for(var i = 0; i < nameOfMatches.length; i++){
+      Match match = Match(nameOfMatches[i]);
+      matchObj.add(match);
+    }
+    for(var i = 0; i < playersName.length; i++){
+      Player player = Player(playersName[i], playersNumber[i], playersBirthYear[i], playerPositions[i]);
+      player.matches = matchObj;
+      playersObj.add(player);
+    }
+    Team team1 = new Team('Chalmers IBK Elit', 'Pride', playersObj);
+
+    const String mittLag= 'Chalmers IBK Elit';
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children:  [
         const SizedBox(height: 40,),
         const Align(
           alignment: Alignment.center,
-          child: Text('Mitt lag',
+          child: Text(mittLag,
             style: TextStyle(
               fontWeight: FontWeight.w800,
               fontSize: 30,
@@ -60,18 +81,23 @@ class PlayersView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                PlayerButton( title: 'Lars Andersson', number: '3', birthYear: '1992',
-                  position: 'Back', picture: 'assets/playericon.jpg', dist: distanceNumber2,
+                PlayerButton( title: team1.players[0].name, number: team1.players[0].number, birthYear: team1.players[0].birthYear,
+                  position: team1.players[0].positionInGame, picture: 'assets/playericon.jpg', dist: distanceNumber2,
                   yCoords: yCoordinatesNumber2, acc: accNumber2, xCoords: xCoordinatesNumber2,
                   speed: speedNumber2,),
                 const SizedBox(height: 30,),
-                PlayerButton( title: 'Mikael Johansson', number: '13', birthYear: '1995',
-                  position: 'Center', picture: 'assets/playericon.jpg', dist: distanceNumber1,
+                PlayerButton( title: team1.players[1].name, number: team1.players[1].number, birthYear: team1.players[1].birthYear,
+                  position: team1.players[1].positionInGame, picture: 'assets/playericon.jpg', dist: distanceNumber1,
                   yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
                   speed: speedNumber1,),
                 const SizedBox(height: 30,),
-                PlayerButton( title: 'Anders Karlsson', number: '19', birthYear: '1990',
-                  position: 'Forward', picture: 'assets/playericon.jpg', dist: distanceNumber1,
+                PlayerButton( title: team1.players[2].name, number: team1.players[2].number, birthYear: team1.players[2].birthYear,
+                  position: team1.players[2].positionInGame, picture: 'assets/playericon.jpg', dist: distanceNumber1,
+                  yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
+                  speed: speedNumber1,),
+                const SizedBox(height: 30,),
+                PlayerButton( title: team1.players[3].name, number: team1.players[3].number, birthYear: team1.players[3].birthYear,
+                  position: team1.players[3].positionInGame, picture: 'assets/playericon.jpg', dist: distanceNumber1,
                   yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
                   speed: speedNumber1,),
               ],),
@@ -79,18 +105,23 @@ class PlayersView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                PlayerButton( title: 'Johan Nilsson', number: '4', birthYear: '2001',
-                  position: 'Back', picture: 'assets/playericon.jpg', dist: distanceNumber1,
+                PlayerButton( title: team1.players[4].name, number: team1.players[4].number, birthYear: team1.players[4].birthYear,
+                  position: team1.players[4].positionInGame, picture: 'assets/playericon.jpg', dist: distanceNumber1,
                   yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
                   speed: speedNumber1,),
                 const SizedBox(height: 30,),
-                PlayerButton( title: 'Erik Larsson', number: '15', birthYear: '2000',
-                  position: 'Forward', picture: 'assets/playericon.jpg', dist: distanceNumber1,
+                PlayerButton( title: team1.players[5].name, number: team1.players[5].number, birthYear: team1.players[5].birthYear,
+                  position: team1.players[5].positionInGame, picture: 'assets/playericon.jpg', dist: distanceNumber1,
                   yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
                   speed: speedNumber1,),
                 const SizedBox(height: 30,),
-                PlayerButton( title: 'Per Eriksson', number: '25', birthYear: '1987',
-                  position: 'Back', picture: 'assets/playericon.jpg', dist: distanceNumber1,
+                PlayerButton( title: team1.players[6].name, number: team1.players[6].number, birthYear: team1.players[6].birthYear,
+                  position: team1.players[6].positionInGame, picture: 'assets/playericon.jpg', dist: distanceNumber1,
+                  yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
+                  speed: speedNumber1,),
+                const SizedBox(height: 30,),
+                PlayerButton( title: team1.players[7].name, number: team1.players[7].number, birthYear: team1.players[7].birthYear,
+                  position: team1.players[7].positionInGame, picture: 'assets/playericon.jpg', dist: distanceNumber1,
                   yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
                   speed: speedNumber1,),
               ],),
@@ -98,18 +129,23 @@ class PlayersView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                PlayerButton( title: 'Peter Olsson', number: '7', birthYear: '1995',
-                  position: 'Forward', picture: 'assets/playericon.jpg', dist: distanceNumber1,
+                PlayerButton( title: team1.players[8].name, number: team1.players[8].number, birthYear: team1.players[8].birthYear,
+                  position: team1.players[8].positionInGame, picture: 'assets/playericon.jpg', dist: distanceNumber1,
                   yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
                   speed: speedNumber1,),
                 const SizedBox(height: 30,),
-                PlayerButton( title: 'Thomas Persson', number: '16', birthYear: '1995',
-                  position: 'Back', picture: 'assets/playericon.jpg', dist: distanceNumber1,
+                PlayerButton( title: team1.players[9].name, number: team1.players[9].number, birthYear: team1.players[9].birthYear,
+                  position: team1.players[9].positionInGame, picture: 'assets/playericon.jpg', dist: distanceNumber1,
                   yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
                   speed: speedNumber1,),
                 const SizedBox(height: 30,),
-                PlayerButton( title: 'Karl Svensson', number: '29', birthYear: '2003',
-                  position: 'Forward', picture: 'assets/playericon.jpg', dist: distanceNumber1,
+                PlayerButton( title: team1.players[10].name, number: team1.players[10].number, birthYear: team1.players[10].birthYear,
+                  position: team1.players[10].positionInGame, picture: 'assets/playericon.jpg', dist: distanceNumber1,
+                  yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
+                  speed: speedNumber1,),
+                const SizedBox(height: 30,),
+                PlayerButton( title: team1.players[11].name, number: team1.players[11].number, birthYear: team1.players[11].birthYear,
+                  position: team1.players[11].positionInGame, picture: 'assets/playericon.jpg', dist: distanceNumber1,
                   yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
                   speed: speedNumber1,),
               ],),
@@ -117,18 +153,23 @@ class PlayersView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                PlayerButton( title: 'Jan Gustafsson', number: '9', birthYear: '1985',
-                  position: 'Back', picture: 'assets/playericon.jpg', dist: distanceNumber1,
+                PlayerButton( title: team1.players[12].name, number: team1.players[12].number, birthYear: team1.players[12].birthYear,
+                  position: team1.players[12].positionInGame, picture: 'assets/playericon.jpg', dist: distanceNumber1,
                   yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
                   speed: speedNumber1,),
                 const SizedBox(height: 30,),
-                PlayerButton( title: 'Rickard Sundström', number: '17', birthYear: '1999',
-                  position: 'Center', picture: 'assets/playericon.jpg', dist: distanceNumber1,
+                PlayerButton( title: team1.players[13].name, number: team1.players[13].number, birthYear: team1.players[13].birthYear,
+                  position: team1.players[13].positionInGame, picture: 'assets/playericon.jpg', dist: distanceNumber1,
                   yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
                   speed: speedNumber1,),
                 const SizedBox(height: 30,),
-                PlayerButton( title: 'Magnus Jansson', number: '47', birthYear: '2000',
-                  position: 'Back', picture: 'assets/playericon.jpg', dist: distanceNumber1,
+                PlayerButton( title: team1.players[14].name, number: team1.players[14].number, birthYear: team1.players[14].birthYear,
+                  position: team1.players[14].positionInGame, picture: 'assets/playericon.jpg', dist: distanceNumber1,
+                  yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
+                  speed: speedNumber1,),
+                const SizedBox(height: 30,),
+                PlayerButton( title: team1.players[15].name, number: team1.players[15].number, birthYear: team1.players[15].birthYear,
+                  position: team1.players[15].positionInGame, picture: 'assets/playericon.jpg', dist: distanceNumber1,
                   yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
                   speed: speedNumber1,),
               ],),
@@ -136,18 +177,13 @@ class PlayersView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                PlayerButton( title: 'Albin Stensson', number: '10', birthYear: '2001',
-                  position: 'Forward', picture: 'assets/playericon.jpg', dist: distanceNumber1,
+                PlayerButton( title: team1.players[16].name, number: team1.players[16].number, birthYear: team1.players[16].birthYear,
+                  position: team1.players[16].positionInGame, picture: 'assets/playericon.jpg', dist: distanceNumber1,
                   yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
                   speed: speedNumber1,),
                 const SizedBox(height: 30,),
-                PlayerButton( title: 'Isak Forsström', number: '18', birthYear: '1998',
-                  position: 'Center', picture: 'assets/playericon.jpg', dist: distanceNumber1,
-                  yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
-                  speed: speedNumber1,),
-                const SizedBox(height: 30,),
-                PlayerButton( title: 'Emil Rhenberg', number: '83', birthYear: '1997',
-                  position: 'Forward', picture: 'assets/playericon.jpg', dist: distanceNumber1,
+                PlayerButton( title: team1.players[17].name, number: team1.players[17].number, birthYear: team1.players[17].birthYear,
+                  position: team1.players[17].positionInGame, picture: 'assets/playericon.jpg', dist: distanceNumber1,
                   yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
                   speed: speedNumber1,),
               ],),

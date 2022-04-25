@@ -15,9 +15,9 @@ class PlayerLayoutView extends StatefulWidget {
     required this.acc, required this.dist, required this.xCoords, required this.yCoords}) : super(key: key);
 
   final String title;
-  final String number;
+  final number;
   final String position;
-  final String birthYear;
+  final birthYear;
   final String picture;
 
   final speed;
@@ -152,7 +152,7 @@ class LogInViewState extends State<PlayerLayoutView>
                                   ),
                                 ),
                                 Text(
-                                  widget.number,
+                                  widget.number.toString(),
                                   style: const TextStyle(
                                     fontSize: 15,
                                     fontWeight: FontWeight.w400,
@@ -172,7 +172,7 @@ class LogInViewState extends State<PlayerLayoutView>
                                   ),
                                 ),
                                 Text(
-                                  widget.birthYear,
+                                  widget.birthYear.toString(),
                                   style: const TextStyle(
                                     fontSize: 15,
                                     fontWeight: FontWeight.w400,

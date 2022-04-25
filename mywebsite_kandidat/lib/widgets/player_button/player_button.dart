@@ -5,9 +5,9 @@ bool isHovering = false;
 
 class PlayerButton extends StatefulWidget {
   final String title;
-  final String number;
+  final number;
   final String position;
-  final String birthYear;
+  final birthYear;
   final String picture;
 
   final speed;
