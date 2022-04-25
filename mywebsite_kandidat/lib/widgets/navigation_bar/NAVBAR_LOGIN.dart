@@ -19,7 +19,7 @@ class NavigationBarTabletDesktopLOGIN extends StatelessWidget {
           Row(
             mainAxisSize: MainAxisSize.min,
             children: const <Widget>[
-              NavBarItem('BALLE', EpisodesRoute),
+              NavBarItem('BALLE', EpisodesRoute), // Balle?
               SizedBox(
                 width: 60,
               ),
