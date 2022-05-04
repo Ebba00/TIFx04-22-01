@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mywebsite_kandidat/views/hannes_heatmap/Ebba_heatmap/Ebba_display.dart';
 import 'package:mywebsite_kandidat/views/hannes_heatmap/HANNES_HEATMAP.dart';
 import '../../../Dropdown/dropdown_PLAYER.dart';
 
@@ -313,15 +314,8 @@ class LogInViewState extends State<PlayerLayoutView>
                                   ),
                                 ),
                               ),
-                              Center(
-                                child: SizedBox(
-                                  width: 410,
-                                  height: 154,
-                                  child: HannesHeatmap(
-                                    coordinatesY2: widget.yCoords[games.indexOf(selectedGame)],
-                                    coordinatesX1: widget.xCoords[games.indexOf(selectedGame)],
-                                  ),
-                                ),
+                              const Center(
+                                child: EbbaView()
                               ),
                             ],
                             controller: _tabController,
@@ -337,3 +331,12 @@ class LogInViewState extends State<PlayerLayoutView>
     );
   }
 }
+
+//SizedBox(
+//                                   width: 410,
+//                                   height: 154,
+//                                   child: HannesHeatmap(
+//                                     coordinatesY2: widget.yCoords[games.indexOf(selectedGame)],
+//                                     coordinatesX1: widget.xCoords[games.indexOf(selectedGame)],
+//                                   ),
+//                                 ),
