@@ -17,7 +17,7 @@ class CallToAction extends StatelessWidget {
         tablet: 850,
         watch: 600,
       ),
-      desktop: const CallToActionTabletDesktop(title: 'Kom igång', navigationPath: EbbaRoute,),
+      desktop: const CallToActionTabletDesktop(title: 'Kom igång', navigationPath: SignUpRoute,),
         watch: const CallToActionMobile(title: 'Kom igång', navigationPath: SignUpRoute,),
         tablet: const CallToActionTabletDesktop(title: 'Kom igång', navigationPath: SignUpRoute,),
         mobile: const CallToActionTabletDesktop(title: 'Kom igång', navigationPath: SignUpRoute,),

@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:mywebsite_kandidat/routing/route_names.dart';
 import 'package:mywebsite_kandidat/views/hannes_heatmap/Ebba_heatmap/Ebba_display.dart';
 import 'package:mywebsite_kandidat/views/hannes_heatmap/HANNES_HEATMAP.dart';
 import '../../../Dropdown/dropdown_PLAYER.dart';
+import '../../../constants/app_colors.dart';
+import '../../../constants/app_colors.dart';
+import '../../../constants/app_colors.dart';
+import '../../../constants/app_colors.dart';
 
 var games = [
   'Match 1',
@@ -77,8 +82,8 @@ class LogInViewState extends State<PlayerLayoutView>
                         width: 30,
                       ),
                       Container(
-                        height: 150,
-                        width: 150,
+                        height: 135,
+                        width: 135,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -92,11 +97,11 @@ class LogInViewState extends State<PlayerLayoutView>
                       ),
                       const SizedBox(
                         width: 30,
-                        height: 40,
+                        height: 30,
                       ),
                       SizedBox(
                         width: 280,
-                        height: 100,
+                        height: 140,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -180,6 +185,32 @@ class LogInViewState extends State<PlayerLayoutView>
                                   ),
                                 ),
                               ],
+                            ),
+                            const SizedBox(height: 22, width: 20,),
+                            Center(
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.pushNamed(context, PlayersRoute);
+                                },
+                                child: Container(
+                                  height: 30,
+                                  width: 120,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: primaryColor,
+                                  ),
+                                  child: const Center(
+                                    child: Text(
+                                      'BYT SPELARE',
+                                      style: TextStyle(
+                                        fontSize: 13,
+                                        fontWeight: FontWeight.w800,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
                             ),
                           ],
                         ),
