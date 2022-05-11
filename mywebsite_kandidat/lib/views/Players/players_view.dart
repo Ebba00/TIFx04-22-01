@@ -19,18 +19,18 @@ var distanceNumber2 = [300, 301, 302];
 var xCoordinatesNumber2 = [[], [], []];
 var yCoordinatesNumber2 = [[], [], []];
 
-List<String> playersName = ['Kungen', 'Drottningen',
+List<String> playersName = ['Kung Carl XVI Gustaf', 'Drottning Silvia',
   'Friedrich Gauss', 'Birger Jarl', 'Liam Neeson', 'Hannes Gustafsson',
   'Leonhard Euler', 'Pontus Johansson', 'Oskar Kullner', 'Ebba Molinder',
   'Victor Salomonsson', 'Elsa Beskow', 'Gustav Vasa', 'Albert Einstein',
-  'Isaac Newton', 'Marie Curie', 'Nikola Tesla', 'William Chalmers', 'Namn1', 'Namn2'];
+  'Isaac Newton', 'Marie Curie', 'Nikola Tesla', 'William Chalmers', 'Stephen Hawking', 'Grete Hermann'];
 List<int> playersNumber = [1, 20, 3, 4, 5, 26, 7, 8, 9, 34, 3, 12, 13, 14, 15,
   16, 17, 18, 98, 99];
 List<int> playersBirthYear = [1946, 1943, 1777, 1210, 1952, 2000, 1707, 1993,
-  1996, 2000, 2000, 1874, 1496, 1879, 1643, 1867, 1856, 1748, 2022, 2022];
+  1996, 2000, 2000, 1874, 1496, 1879, 1643, 1867, 1856, 1748, 1942, 1901];
 List<String> playerPositions = ['Målvakt', 'Målvakt', 'Back', 'Back', 'Forward',
   'Forward', 'Forward', 'Center', 'Forward', 'Forward', 'Center', 'Center',
-  'Back', 'Back', 'Forward', 'Back', 'Back', 'Forward', 'Avbytare', 'Avbytare'];
+  'Back', 'Back', 'Forward', 'Back', 'Back', 'Forward', 'Forward', 'Back'];
 int a = 0;
 //List<String> nameOfMatches = ['KTH suger IBK', 'Lunds tråkiga högskola IBK', 'Linköpings nollor IBK'];
 List<String> nameOfMatches = ['KTH IBK', 'Lund IBK', 'Linköping IBK'];
@@ -48,6 +48,7 @@ class PlayersView extends StatelessWidget {
       player.matches.add(Match(nameOfMatches[0], match0XCoord[i], match0YCoord[i]));
       player.matches.add(Match(nameOfMatches[1], match1XCoord[i], match1YCoord[i]));
       player.matches.add(Match(nameOfMatches[2], match2XCoord[i], match2YCoord[i]));
+      //print(player.name);
       player.heatMaps[0] = heatMap(player.matches[0].xPositions, player.matches[0].yPositions);
       player.heatMaps[1] = heatMap(player.matches[1].xPositions, player.matches[1].yPositions);
       player.heatMaps[2] = heatMap(player.matches[2].xPositions, player.matches[2].yPositions);
