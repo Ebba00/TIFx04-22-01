@@ -37,8 +37,12 @@ List<double> x17 = [];
 List<double> y17 = [];
 List<double> x18 = [];
 List<double> y18 = [];
-List<List<double>> match0XCoord = [x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18];
-List<List<double>> match0YCoord = [y1,y2,y3,y4,y5,y6,y7,y8,y9,y10,y11,y12,y13,y14,y15,y16,y17,y18];
+List<double> x19 = [];
+List<double> y19 = [];
+List<double> x20 = [];
+List<double> y20 = [];
+List<List<double>> match0XCoord = [x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18, x19, x20];
+List<List<double>> match0YCoord = [y1,y2,y3,y4,y5,y6,y7,y8,y9,y10,y11,y12,y13,y14,y15,y16,y17,y18, y19, y20];
 
 // match1
 List<double> x1a = [];
@@ -77,8 +81,12 @@ List<double> x17a = [];
 List<double> y17a = [];
 List<double> x18a = [];
 List<double> y18a = [];
-List<List<double>> match1XCoord = [x1a,x2a,x3a,x4a,x5a,x6a,x7a,x8a,x9a,x10a,x11a,x12a,x13a,x14a,x15a,x16a,x17a,x18a];
-List<List<double>> match1YCoord = [y1a,y2a,y3a,y4a,y5a,y6a,y7a,y8a,y9a,y10a,y11a,y12a,y13a,y14a,y15a,y16a,y17a,y18a];
+List<double> x19a = [];
+List<double> y19a = [];
+List<double> x20a = [];
+List<double> y20a = [];
+List<List<double>> match1XCoord = [x1a,x2a,x3a,x4a,x5a,x6a,x7a,x8a,x9a,x10a,x11a,x12a,x13a,x14a,x15a,x16a,x17a,x18a,x19a,x20a];
+List<List<double>> match1YCoord = [y1a,y2a,y3a,y4a,y5a,y6a,y7a,y8a,y9a,y10a,y11a,y12a,y13a,y14a,y15a,y16a,y17a,y18a,y19a,y20a];
 
 // match2
 List<double> x1b = [];
@@ -117,7 +125,11 @@ List<double> x17b = [];
 List<double> y17b = [];
 List<double> x18b = [];
 List<double> y18b = [];
-List<List<double>> match2XCoord = [x1b,x2b,x3b,x4b,x5b,x6b,x7b,x8b,x9b,x10b,x11b,x12b,x13b,x14b,x15b,x16b,x17b,x18b];
-List<List<double>> match2YCoord = [y1b,y2b,y3b,y4b,y5b,y6b,y7b,y8b,y9b,y10b,y11b,y12b,y13b,y14b,y15b,y16b,y17b,y18b];
+List<double> x19b = [];
+List<double> y19b = [];
+List<double> x20b = [];
+List<double> y20b = [];
+List<List<double>> match2XCoord = [x1b,x2b,x3b,x4b,x5b,x6b,x7b,x8b,x9b,x10b,x11b,x12b,x13b,x14b,x15b,x16b,x17b,x18b,x19b,x20b];
+List<List<double>> match2YCoord = [y1b,y2b,y3b,y4b,y5b,y6b,y7b,y8b,y9b,y10b,y11b,y12b,y13b,y14b,y15b,y16b,y17b,y18b,y19b,y20b];
 
 

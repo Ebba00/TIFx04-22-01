@@ -23,14 +23,14 @@ List<String> playersName = ['Kungen', 'Drottningen',
   'Friedrich Gauss', 'Birger Jarl', 'Liam Neeson', 'Hannes Gustafsson',
   'Leonhard Euler', 'Pontus Johansson', 'Oskar Kullner', 'Ebba Molinder',
   'Victor Salomonsson', 'Elsa Beskow', 'Gustav Vasa', 'Albert Einstein',
-  'Isaac Newton', 'Marie Curie', 'Nikola Tesla', 'William Chalmers'];
+  'Isaac Newton', 'Marie Curie', 'Nikola Tesla', 'William Chalmers', 'Namn1', 'Namn2'];
 List<int> playersNumber = [1, 20, 3, 4, 5, 26, 7, 8, 9, 34, 3, 12, 13, 14, 15,
-  16, 17, 18];
+  16, 17, 18, 98, 99];
 List<int> playersBirthYear = [1946, 1943, 1777, 1210, 1952, 2000, 1707, 1993,
-  1996, 2000, 2000, 1874, 1496, 1879, 1643, 1867, 1856, 1748];
+  1996, 2000, 2000, 1874, 1496, 1879, 1643, 1867, 1856, 1748, 2022, 2022];
 List<String> playerPositions = ['Målvakt', 'Målvakt', 'Back', 'Back', 'Forward',
   'Forward', 'Forward', 'Center', 'Forward', 'Forward', 'Center', 'Center',
-  'Back', 'Back', 'Forward', 'Back', 'Back', 'Forward'];
+  'Back', 'Back', 'Forward', 'Back', 'Back', 'Forward', 'Avbytare', 'Avbytare'];
 int a = 0;
 //List<String> nameOfMatches = ['KTH suger IBK', 'Lunds tråkiga högskola IBK', 'Linköpings nollor IBK'];
 List<String> nameOfMatches = ['KTH IBK', 'Lund IBK', 'Linköping IBK'];
@@ -193,6 +193,16 @@ class PlayersView extends StatelessWidget {
                   position: team1.players[17].positionInGame, picture: 'assets/playericon.jpg', dist: distanceNumber1,
                   yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
                   speed: speedNumber1, heatmaps: team1.players[17].heatMaps,),
+                const SizedBox(height: 5,),
+                PlayerButton( title: team1.players[18].name, number: team1.players[18].number, birthYear: team1.players[16].birthYear,
+                  position: team1.players[18].positionInGame, picture: 'assets/playericon.jpg', dist: distanceNumber1,
+                  yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
+                  speed: speedNumber1, heatmaps: team1.players[18].heatMaps,),
+                const SizedBox(height: 5,),
+                PlayerButton( title: team1.players[19].name, number: team1.players[19].number, birthYear: team1.players[19].birthYear,
+                  position: team1.players[19].positionInGame, picture: 'assets/playericon.jpg', dist: distanceNumber1,
+                  yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
+                  speed: speedNumber1, heatmaps: team1.players[19].heatMaps,),
               ],),
           ],
         ),
