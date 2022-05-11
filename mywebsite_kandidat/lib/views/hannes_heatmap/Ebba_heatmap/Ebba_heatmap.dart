@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-
+/*
 var xCoord = [2.86,2.88,2.9,2.92,2.95,2.98,3.0,3.01,3.04,3.08,3.11,3.15,3.2,
   3.25,3.3,3.34,3.39,3.43,3.47,3.5,3.54,3.58,3.61,3.65,3.69,3.72,3.75,3.77,
   3.8,3.81,3.84,3.87,3.9,3.95,3.99,4.04,4.09,4.14,4.18,4.22,4.26,4.29,4.31,
@@ -215,23 +215,27 @@ var yCoord = [-3.01,-3.01,-3.02,-3.02,-3.0,-2.98,-2.97,-2.97,-2.97,-2.98,-2.99,
   3.46,3.55,3.41,3.79,3.4,4.65,6.42,4.97,1.59,0.99,1.79,0.82,1.69,2.49,2.03,
   1.82,2.19,2.35,2.23,2.57,2.99,3.06,2.61,3.34,3.21,3.95,4.84,6.73,6.61,5.25,
   3.84,2.88,3.11,1.14,0.87,1.14,2.41,1.53,2.66,3.6,5.16,6.67,6.85,3.86,3.05,
-  1.71,1.76,3.4,5.56,5.36,5.0,3.75,3.75];
+  1.71,1.76,3.4,5.56,5.36,5.0,3.75,3.75];*/
 
 var columns = 21;	// x
 var rows = 11;	// y
 var maxValue = 0;
 var allPositions = 0;
 
-
-List<List<int>> matrix2 = List.generate(
-    rows, (i) => List.generate(columns, (j) => 0));
-List<List<Color>> matrixColour = List.generate(
-    rows, (i) => List.generate(columns, (j) => Colors.white));
+List<List<Color>> heatMap(xCoord, yCoord){
+  List<List<int>> matrix2 = List.generate(
+      rows, (i) => List.generate(columns, (j) => 0));
+  List<List<Color>> matrixColour = List.generate(
+      rows, (i) => List.generate(columns, (j) => Colors.white));
 
 // coordinatesMaxX = 400;
 // coordinatesMaxY = 200;
-int lengthOfValues = xCoord.length;
-List<List<Color>> colouredMatrix() {  // Matrix[11][21]
+  //int lengthOfValues = xCoord.length;
+  return colouredMatrix(xCoord, yCoord);
+
+}
+List<List<Color>> colouredMatrix(xCoord, yCoord) {  // Matrix[11][21]
+  int lengthOfValues = xCoord.length;
   if(yCoord.length < lengthOfValues){
     lengthOfValues = yCoord.length;
   }

@@ -7,30 +7,31 @@ import '../../../constants/app_colors.dart';
 import '../../../constants/app_colors.dart';
 import '../../../constants/app_colors.dart';
 import '../../../constants/app_colors.dart';
+import '../../Players/all_players/playerObject.dart';
+import '../../episodes/episodes_content_desktop.dart';
 
-var games = [
-  'Match 1',
-  'Match 2',
-  'Match 3',
-];
+var gamesName = ['KTH suger IBK', 'Lunds tråkiga högskola IBK', 'Linköpings nollor IBK'];
 
 class PlayerLayoutView extends StatefulWidget {
 
   const PlayerLayoutView({Key? key, required this.title, required this.number, required this.position,
     required this.birthYear, required this.picture, required this.speed,
-    required this.acc, required this.dist, required this.xCoords, required this.yCoords}) : super(key: key);
+    required this.acc, required this.dist, required this.xCoords, required this.yCoords, required this.games}) : super(key: key);
 
   final String title;
   final number;
   final String position;
   final birthYear;
   final String picture;
+  final List<Match> games;
 
   final speed;
   final acc;
   final dist;
   final xCoords;
   final yCoords;
+
+
 
   @override
   State createState() => LogInViewState();
@@ -225,7 +226,7 @@ class LogInViewState extends State<PlayerLayoutView>
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 DropDownButtonUsed(
-                    items: games,
+                    items: gamesName,
                     selectedItem: selectedGame,
                     onChange: (String newValue) {
                       setState(() {

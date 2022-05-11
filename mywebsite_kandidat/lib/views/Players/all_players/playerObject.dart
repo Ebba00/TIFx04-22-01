@@ -1,11 +1,14 @@
-//import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
 class Match{
   late String name;
-  late List<int> xPositions;
-  late List<int> yPositions;
-  Match(String name){
+  late List<double> xPositions;
+  late List<double> yPositions;
+  late List<List<Color>> heatmapMatch = [];
+  Match(String name, List<double> xPositions, List<double> yPositions){
     this.name = name;
+    this.xPositions = xPositions;
+    this.yPositions = yPositions;
   }
 }
 
@@ -17,6 +20,8 @@ class Player{
   late int birthYear;
   late String positionInGame;
   late String distance;
+  late List<List<double>> xPositions;
+  late List<List<double>> yPositions;
   List<Match> matches = [];
   late int highSpeed;  // Created by us
   late int maxAcc;

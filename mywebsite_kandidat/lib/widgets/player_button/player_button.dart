@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mywebsite_kandidat/views/Players/all_players/playerObject.dart';
 import '../../views/Players/all_players/PLAYER_LAYOUT_TEST.dart';
+import '../../views/Players/all_players/playerObject.dart';
 
 bool isHovering = false;
 
@@ -9,6 +11,7 @@ class PlayerButton extends StatefulWidget {
   final String position;
   final birthYear;
   final String picture;
+  final List<Match> games;
 
   final speed;
   final acc;
@@ -18,7 +21,7 @@ class PlayerButton extends StatefulWidget {
 
   const PlayerButton({Key? key, required this.title, required this.number, required this.position,
     required this.birthYear, required this.picture, required this.speed, required this.acc,
-    required this.dist, required this.xCoords, required this.yCoords}) : super(key: key);
+    required this.dist, required this.xCoords, required this.yCoords, required this.games}) : super(key: key);
 
   @override
   State createState() => PlayerButtonState(); }
@@ -33,7 +36,7 @@ class PlayerButtonState extends State <PlayerButton>{
             PlayerLayoutView(title: widget.title, birthYear: widget.birthYear,
               number: widget.number, position: widget.position, picture: widget.picture,
               speed: widget.speed, acc: widget.acc, dist: widget.dist, xCoords: widget.xCoords,
-              yCoords: widget.yCoords,)));
+              yCoords: widget.yCoords, games: widget.games)));
       },
       onHover: (hovering) {
         setState(() => isHovering = hovering);

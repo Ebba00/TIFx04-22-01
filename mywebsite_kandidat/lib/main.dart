@@ -3,6 +3,8 @@ import 'package:mywebsite_kandidat/locator.dart';
 import 'package:mywebsite_kandidat/views/layout_template/layout_template.dart';
 import 'locator.dart';
 
+bool loadedCoordinates = false;
+
 void main() {
   setupLocator();
   runApp(const MyApp());

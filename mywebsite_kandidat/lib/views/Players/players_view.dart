@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:mywebsite_kandidat/views/Players/all_players/Database.dart';
+import '../../main.dart';
 import '../../widgets/player_button/player_button.dart';
+import '../hannes_heatmap/Ebba_heatmap/Ebba_heatmap.dart';
 import 'all_players/playerObject.dart';
 
 var speedNumber1 = [10, 11, 12];
@@ -29,26 +32,31 @@ List<String> playerPositions = ['Målvakt', 'Målvakt', 'Back', 'Back', 'Forward
   'Forward', 'Forward', 'Center', 'Forward', 'Forward', 'Center', 'Center',
   'Back', 'Back', 'Forward', 'Back', 'Back', 'Forward'];
 int a = 0;
-List<String> nameOfMatches = ['Match1', 'Match2', 'Match3'];
+List<String> nameOfMatches = ['KTH suger IBK', 'Lunds tråkiga högskola IBK', 'Linköpings nollor IBK'];
 List<Match> matchObj = [];
 List<Player> playersObj = [];
 class PlayersView extends StatelessWidget {
   const PlayersView({Key? key}) : super(key: key);
 
+
   @override
   Widget build(BuildContext context) {
-
-    for(var i = 0; i < nameOfMatches.length; i++){
-      Match match = Match(nameOfMatches[i]);
-      matchObj.add(match);
-    }
     for(var i = 0; i < playersName.length; i++){
       Player player = Player(playersName[i], playersNumber[i], playersBirthYear[i], playerPositions[i]);
-      player.matches = matchObj;
+
+      player.matches.add(Match(nameOfMatches[0], match0XCoord[i+1], match0YCoord[i+1]));
+      player.matches.add(Match(nameOfMatches[1], match1XCoord[i+1], match1YCoord[i+1]));
+      player.matches.add(Match(nameOfMatches[2], match2XCoord[i+1], match2YCoord[i+1]));
+      player.matches[0].heatmapMatch = heatMap(player.matches[0].xPositions, player.matches[0].yPositions);
+      player.matches[1].heatmapMatch = heatMap(player.matches[1].xPositions, player.matches[1].yPositions);
+      player.matches[2].heatmapMatch = heatMap(player.matches[2].xPositions, player.matches[2].yPositions);
+      /*for(var i = 0; i < matchObj.length; i++){
+        player.matches[i].xPositions;
+        player.matches[i].yPositions;
+      }*/
       playersObj.add(player);
     }
     Team team1 = new Team('Chalmers IBK Elit', 'Pride', playersObj);
-
     const String mittLag= 'Chalmers IBK Elit';
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -84,22 +92,22 @@ class PlayersView extends StatelessWidget {
                 PlayerButton( title: team1.players[0].name, number: team1.players[0].number, birthYear: team1.players[0].birthYear,
                   position: team1.players[0].positionInGame, picture: 'assets/playericon.jpg', dist: distanceNumber2,
                   yCoords: yCoordinatesNumber2, acc: accNumber2, xCoords: xCoordinatesNumber2,
-                  speed: speedNumber2,),
+                  speed: speedNumber2, games: team1.players[0].matches,),
                 const SizedBox(height: 30,),
                 PlayerButton( title: team1.players[1].name, number: team1.players[1].number, birthYear: team1.players[1].birthYear,
                   position: team1.players[1].positionInGame, picture: 'assets/playericon.jpg', dist: distanceNumber1,
                   yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
-                  speed: speedNumber1,),
+                  speed: speedNumber1, games: team1.players[1].matches,),
                 const SizedBox(height: 30,),
                 PlayerButton( title: team1.players[2].name, number: team1.players[2].number, birthYear: team1.players[2].birthYear,
                   position: team1.players[2].positionInGame, picture: 'assets/playericon.jpg', dist: distanceNumber1,
                   yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
-                  speed: speedNumber1,),
+                  speed: speedNumber1, games: team1.players[2].matches,),
                 const SizedBox(height: 30,),
                 PlayerButton( title: team1.players[3].name, number: team1.players[3].number, birthYear: team1.players[3].birthYear,
                   position: team1.players[3].positionInGame, picture: 'assets/playericon.jpg', dist: distanceNumber1,
                   yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
-                  speed: speedNumber1,),
+                  speed: speedNumber1, games: team1.players[3].matches,),
               ],),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -108,22 +116,22 @@ class PlayersView extends StatelessWidget {
                 PlayerButton( title: team1.players[4].name, number: team1.players[4].number, birthYear: team1.players[4].birthYear,
                   position: team1.players[4].positionInGame, picture: 'assets/playericon.jpg', dist: distanceNumber1,
                   yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
-                  speed: speedNumber1,),
+                  speed: speedNumber1, games: team1.players[4].matches,),
                 const SizedBox(height: 30,),
                 PlayerButton( title: team1.players[5].name, number: team1.players[5].number, birthYear: team1.players[5].birthYear,
                   position: team1.players[5].positionInGame, picture: 'assets/playericon.jpg', dist: distanceNumber1,
                   yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
-                  speed: speedNumber1,),
+                  speed: speedNumber1, games: team1.players[5].matches,),
                 const SizedBox(height: 30,),
                 PlayerButton( title: team1.players[6].name, number: team1.players[6].number, birthYear: team1.players[6].birthYear,
                   position: team1.players[6].positionInGame, picture: 'assets/playericon.jpg', dist: distanceNumber1,
                   yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
-                  speed: speedNumber1,),
+                  speed: speedNumber1, games: team1.players[6].matches,),
                 const SizedBox(height: 30,),
                 PlayerButton( title: team1.players[7].name, number: team1.players[7].number, birthYear: team1.players[7].birthYear,
                   position: team1.players[7].positionInGame, picture: 'assets/playericon.jpg', dist: distanceNumber1,
                   yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
-                  speed: speedNumber1,),
+                  speed: speedNumber1, games: team1.players[7].matches,),
               ],),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -132,22 +140,22 @@ class PlayersView extends StatelessWidget {
                 PlayerButton( title: team1.players[8].name, number: team1.players[8].number, birthYear: team1.players[8].birthYear,
                   position: team1.players[8].positionInGame, picture: 'assets/playericon.jpg', dist: distanceNumber1,
                   yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
-                  speed: speedNumber1,),
+                  speed: speedNumber1, games: team1.players[8].matches,),
                 const SizedBox(height: 30,),
                 PlayerButton( title: team1.players[9].name, number: team1.players[9].number, birthYear: team1.players[9].birthYear,
                   position: team1.players[9].positionInGame, picture: 'assets/playericon.jpg', dist: distanceNumber1,
                   yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
-                  speed: speedNumber1,),
+                  speed: speedNumber1, games: team1.players[9].matches,),
                 const SizedBox(height: 30,),
                 PlayerButton( title: team1.players[10].name, number: team1.players[10].number, birthYear: team1.players[10].birthYear,
                   position: team1.players[10].positionInGame, picture: 'assets/playericon.jpg', dist: distanceNumber1,
                   yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
-                  speed: speedNumber1,),
+                  speed: speedNumber1, games: team1.players[10].matches,),
                 const SizedBox(height: 30,),
                 PlayerButton( title: team1.players[11].name, number: team1.players[11].number, birthYear: team1.players[11].birthYear,
                   position: team1.players[11].positionInGame, picture: 'assets/playericon.jpg', dist: distanceNumber1,
                   yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
-                  speed: speedNumber1,),
+                  speed: speedNumber1, games: team1.players[11].matches,),
               ],),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -156,22 +164,22 @@ class PlayersView extends StatelessWidget {
                 PlayerButton( title: team1.players[12].name, number: team1.players[12].number, birthYear: team1.players[12].birthYear,
                   position: team1.players[12].positionInGame, picture: 'assets/playericon.jpg', dist: distanceNumber1,
                   yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
-                  speed: speedNumber1,),
+                  speed: speedNumber1, games: team1.players[12].matches,),
                 const SizedBox(height: 30,),
                 PlayerButton( title: team1.players[13].name, number: team1.players[13].number, birthYear: team1.players[13].birthYear,
                   position: team1.players[13].positionInGame, picture: 'assets/playericon.jpg', dist: distanceNumber1,
                   yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
-                  speed: speedNumber1,),
+                  speed: speedNumber1, games: team1.players[13].matches,),
                 const SizedBox(height: 30,),
                 PlayerButton( title: team1.players[14].name, number: team1.players[14].number, birthYear: team1.players[14].birthYear,
                   position: team1.players[14].positionInGame, picture: 'assets/playericon.jpg', dist: distanceNumber1,
                   yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
-                  speed: speedNumber1,),
+                  speed: speedNumber1, games: team1.players[14].matches,),
                 const SizedBox(height: 30,),
                 PlayerButton( title: team1.players[15].name, number: team1.players[15].number, birthYear: team1.players[15].birthYear,
                   position: team1.players[15].positionInGame, picture: 'assets/playericon.jpg', dist: distanceNumber1,
                   yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
-                  speed: speedNumber1,),
+                  speed: speedNumber1, games: team1.players[15].matches,),
               ],),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -180,12 +188,12 @@ class PlayersView extends StatelessWidget {
                 PlayerButton( title: team1.players[16].name, number: team1.players[16].number, birthYear: team1.players[16].birthYear,
                   position: team1.players[16].positionInGame, picture: 'assets/playericon.jpg', dist: distanceNumber1,
                   yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
-                  speed: speedNumber1,),
+                  speed: speedNumber1, games: team1.players[16].matches,),
                 const SizedBox(height: 30,),
                 PlayerButton( title: team1.players[17].name, number: team1.players[17].number, birthYear: team1.players[17].birthYear,
                   position: team1.players[17].positionInGame, picture: 'assets/playericon.jpg', dist: distanceNumber1,
                   yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
-                  speed: speedNumber1,),
+                  speed: speedNumber1, games: team1.players[17].matches,),
               ],),
           ],
         ),
