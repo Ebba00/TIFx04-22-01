@@ -10,27 +10,26 @@ import '../../../constants/app_colors.dart';
 import '../../Players/all_players/playerObject.dart';
 import '../../episodes/episodes_content_desktop.dart';
 
-var gamesName = ['KTH suger IBK', 'Lunds tråkiga högskola IBK', 'Linköpings nollor IBK'];
+var games = ['KTH suger IBK', 'Lunds tråkiga högskola IBK', 'Linköpings nollor IBK'];
 
 class PlayerLayoutView extends StatefulWidget {
 
   const PlayerLayoutView({Key? key, required this.title, required this.number, required this.position,
     required this.birthYear, required this.picture, required this.speed,
-    required this.acc, required this.dist, required this.xCoords, required this.yCoords, required this.games}) : super(key: key);
+    required this.acc, required this.dist, required this.xCoords, required this.yCoords, required this.heatmaps}) : super(key: key);
 
   final String title;
   final number;
   final String position;
   final birthYear;
   final String picture;
-  final List<Match> games;
+  final List<List<List<Color>>> heatmaps;
 
   final speed;
   final acc;
   final dist;
   final xCoords;
   final yCoords;
-
 
 
   @override
@@ -226,7 +225,7 @@ class LogInViewState extends State<PlayerLayoutView>
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 DropDownButtonUsed(
-                    items: gamesName,
+                    items: games,
                     selectedItem: selectedGame,
                     onChange: (String newValue) {
                       setState(() {
@@ -235,7 +234,7 @@ class LogInViewState extends State<PlayerLayoutView>
                     }),
                 const SizedBox(
                   height: 40,
-                  width: 30,
+                  width: 70,
                 ),
                 Container(
                     decoration: BoxDecoration(
@@ -346,8 +345,10 @@ class LogInViewState extends State<PlayerLayoutView>
                                   ),
                                 ),
                               ),
-                              const Center(
-                                child: EbbaView()
+                              Center(
+                                child: EbbaView(
+                                  matrixColour: widget.heatmaps[games.indexOf(selectedGame)],
+                                )
                               ),
                             ],
                             controller: _tabController,

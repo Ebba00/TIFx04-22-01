@@ -22,7 +22,7 @@ Route<dynamic>? generateRoute(RouteSettings settings) {
     case HomeRoute:
       return _getPageRoute(const HomeView(), settings);
     case EbbaRoute:
-      return _getPageRoute(const EbbaView(), settings);
+      return _getPageRoute(const EbbaView(matrixColour: [],), settings);
     case AboutRoute:
       return _getPageRoute(const AboutView(), settings);
     case EpisodesRoute:

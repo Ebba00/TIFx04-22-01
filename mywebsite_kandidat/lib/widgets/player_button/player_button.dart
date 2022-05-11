@@ -11,7 +11,7 @@ class PlayerButton extends StatefulWidget {
   final String position;
   final birthYear;
   final String picture;
-  final List<Match> games;
+  final List<List<List<Color>>> heatmaps;
 
   final speed;
   final acc;
@@ -21,7 +21,7 @@ class PlayerButton extends StatefulWidget {
 
   const PlayerButton({Key? key, required this.title, required this.number, required this.position,
     required this.birthYear, required this.picture, required this.speed, required this.acc,
-    required this.dist, required this.xCoords, required this.yCoords, required this.games}) : super(key: key);
+    required this.dist, required this.xCoords, required this.yCoords, required this.heatmaps,}) : super(key: key);
 
   @override
   State createState() => PlayerButtonState(); }
@@ -36,7 +36,7 @@ class PlayerButtonState extends State <PlayerButton>{
             PlayerLayoutView(title: widget.title, birthYear: widget.birthYear,
               number: widget.number, position: widget.position, picture: widget.picture,
               speed: widget.speed, acc: widget.acc, dist: widget.dist, xCoords: widget.xCoords,
-              yCoords: widget.yCoords, games: widget.games)));
+              yCoords: widget.yCoords, heatmaps: widget.heatmaps)));
       },
       onHover: (hovering) {
         setState(() => isHovering = hovering);

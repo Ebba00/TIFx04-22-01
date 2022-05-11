@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+var columns = 21;	// x
+var rows = 11;	// y
+var dimension = 3;
+
 class Match{
   late String name;
   late List<double> xPositions;
@@ -20,8 +24,8 @@ class Player{
   late int birthYear;
   late String positionInGame;
   late String distance;
-  late List<List<double>> xPositions;
-  late List<List<double>> yPositions;
+  List<List<List<Color>>> heatMaps = List.generate(dimension, (k) => List.generate(
+  rows, (i) => List.generate(columns, (j) => Colors.white)));
   List<Match> matches = [];
   late int highSpeed;  // Created by us
   late int maxAcc;
@@ -32,6 +36,7 @@ class Player{
     this.number = number;
     this.birthYear = birthYear;
     this.positionInGame = positionInGame;
+
   }
 }
 // if two (or more) players have the same number, name and team they get added

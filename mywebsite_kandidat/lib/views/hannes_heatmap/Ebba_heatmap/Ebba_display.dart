@@ -3,11 +3,13 @@ import 'package:mywebsite_kandidat/views/hannes_heatmap/Ebba_heatmap/field_area2
 import 'Ebba_heatmap.dart';
 
 class EbbaView extends StatelessWidget {
-  const EbbaView({Key? key}) : super(key: key);
+  final List<List<Color>> matrixColour;
+
+  const EbbaView({Key? key, required this.matrixColour}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    matrixColour = colouredMatrix();
+    //matrixColour = heatmap;
     return Row(
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
