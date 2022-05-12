@@ -72,7 +72,7 @@ class PlayerButtonState extends State <PlayerButton>{
             ),
         ),
         decoration: (isHovering
-        ?  BoxDecoration(color: Colors.black38,
+        ?  BoxDecoration(color: Colors.white70,//black38
           borderRadius: BorderRadius.circular(15),
           border: Border.all(color: Colors.black, width: 2,),)
         :  BoxDecoration(color: Colors.white70,
