@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mywebsite_kandidat/widgets/navigation_bar/NAVBAR_LOGIN.dart';
 import 'package:mywebsite_kandidat/widgets/navigation_bar/navigation_bar_tablet_desktop.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-import '../../VARIABLES.dart';
+import '../../views/login_signup/login.dart';
 import 'navigation_bar_mobile.dart';
 
 class NavigationBar extends StatelessWidget {

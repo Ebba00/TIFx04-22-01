@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mywebsite_kandidat/views/Players/all_players/Database.dart';
-import '../../main.dart';
 import '../../widgets/player_button/player_button.dart';
 import '../hannes_heatmap/Ebba_heatmap/Ebba_heatmap.dart';
 import 'all_players/playerObject.dart';

@@ -5,7 +5,6 @@ import 'package:flutter/rendering.dart';
 import 'package:mywebsite_kandidat/Dropdown/dropdown_button_name.dart';
 import '../../Dropdown/drop_down_game.dart';
 import '../../Dropdown/dropdown_button_name.dart';
-import '../../VARIABLES.dart';
 
 
 var names = [
@@ -62,7 +61,6 @@ class EpisodesContentDesktop extends State<Parent> {
 
   @override
   Widget build(BuildContext context) {
-    print(newList);
     return Row(
       mainAxisSize: MainAxisSize.max,
       children: <Widget>[
