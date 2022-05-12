@@ -32,7 +32,7 @@ List<String> playerPositions = ['Målvakt', 'Målvakt', 'Back', 'Back', 'Forward
   'Forward', 'Forward', 'Center', 'Forward', 'Forward', 'Center', 'Center',
   'Back', 'Back', 'Forward', 'Back', 'Back', 'Forward', 'Forward', 'Back'];
 int a = 0;
-//List<String> nameOfMatches = ['KTH suger IBK', 'Lunds tråkiga högskola IBK', 'Linköpings nollor IBK'];
+//List
 List<String> nameOfMatches = ['KTH IBK', 'Lund IBK', 'Linköping IBK'];
 List<Match> matchObj = [];
 List<Player> playersObj = [];

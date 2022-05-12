@@ -38,9 +38,9 @@ var oscarDistance = [50,51,52];
 
 var distance = [hannesDistance,ebbaDistance,oscarDistance];
 
-var hannesHeatmaps = ['assets/heatmap.jpg','assets/heatmap.jpg','assets/heatmap.jpg'];
-var ebbaHeatmaps = ['assets/heatmap.jpg','assets/heatmap.jpg','assets/heatmap.jpg'];
-var oscarHeatmaps = ['assets/heatmap.jpg','assets/heatmap.jpg','assets/heatmap.jpg'];
+var hannesHeatmaps = ['assets/ExHeatmap.PNG','assets/ExHeatmap.PNG','assets/ExHeatmap.PNG'];
+var ebbaHeatmaps = ['assets/ExHeatmap.PNG','assets/ExHeatmap.PNG','assets/ExHeatmap.PNG'];
+var oscarHeatmaps = ['assets/ExHeatmap.PNG','assets/ExHeatmap.PNG','assets/ExHeatmap.PNG'];
 
 var heatmaps = [hannesHeatmaps,ebbaHeatmaps,oscarHeatmaps];
 

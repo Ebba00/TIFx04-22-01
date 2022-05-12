@@ -10,7 +10,6 @@ import '../../../constants/app_colors.dart';
 import '../../Players/all_players/playerObject.dart';
 import '../../episodes/episodes_content_desktop.dart';
 
-//var games = ['KTH suger IBK', 'Lunds tråkiga högskola IBK', 'Linköpings nollor IBK'];
 var games = ['KTH IBK', 'Lund IBK', 'Linköping IBK'];
 
 class PlayerLayoutView extends StatefulWidget {
