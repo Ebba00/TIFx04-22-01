@@ -57,7 +57,7 @@ class PlayersView extends StatelessWidget {
       //print(player.heatMaps);
     }
     Team team1 = new Team('Chalmers IBK Elit', 'Pride', playersObj);
-    const String mittLag= 'Chalmers IBK Elit';
+    const String mittLag= 'TIFx04-22-01 IBK';
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children:  [
