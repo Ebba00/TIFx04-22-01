@@ -56,32 +56,65 @@ List<List<Color>> heatMap(xCoord, yCoord) {  // Matrix[11][21]
       // colour each area
       var position = matrix2[row][col];
       if (position == maxValue) {
-        position = position + 200;
+        position = position + 20;
       }
       //print(position);
-      if (position > 0.008 * allPositions) {
-        matrixColour[row][col] = const Color.fromRGBO(0, 34, 85, 1.0); // Darkest
+      if (position > 0.85 * allPositions) {
+        matrixColour[row][col] = const Color.fromRGBO(77, 0, 31, 1.0); // Darkest
       }
-      else if (position > 0.007 * allPositions) {
-        matrixColour[row][col] = const Color.fromRGBO(10, 46, 102, 1.0);
+      else if (position > 0.08 * allPositions) {
+        matrixColour[row][col] = const Color.fromRGBO(102, 0, 41, 1.0); // Darkest
       }
-      else if (position > 0.006 * allPositions) {
-        matrixColour[row][col] = const Color.fromRGBO(23, 61, 119, 1.0);
+      else if (position > 0.075 * allPositions) {
+        matrixColour[row][col] = const Color.fromRGBO(117, 0, 46, 1.0); // Darkest
+      }
+      else if (position > 0.07 * allPositions) {
+        matrixColour[row][col] = const Color.fromRGBO(128, 0, 51, 1.0); // Darkest
+      }
+      else if (position > 0.065 * allPositions) {
+        matrixColour[row][col] = const Color.fromRGBO(153, 0, 61, 1.0); // Darkest
+      }
+      else if (position > 0.06 * allPositions) {
+        matrixColour[row][col] = const Color.fromRGBO(179, 0, 71, 1.0);
+      }
+      else if (position > 0.055 * allPositions) {
+        matrixColour[row][col] = const Color.fromRGBO(191, 0, 76, 1.0);
+      }
+      else if (position > 0.05 * allPositions) {
+        matrixColour[row][col] = const Color.fromRGBO(204, 0, 82, 1.0);
+      }
+      else if (position > 0.045 * allPositions) {
+        matrixColour[row][col] = const Color.fromRGBO(230, 0, 92, 1.0);
+      }
+      else if (position > 0.04 * allPositions) {
+        matrixColour[row][col] = const Color.fromRGBO(255, 0, 102, 1.0);
+      }
+      else if (position > 0.035 * allPositions) {
+        matrixColour[row][col] = const Color.fromRGBO(255, 26, 117, 1.0);
+      }
+      else if (position > 0.03 * allPositions) {
+        matrixColour[row][col] = const Color.fromRGBO(255, 51, 133, 1.0); // Darkest
+      }
+      else if (position > 0.025 * allPositions) {
+        matrixColour[row][col] = const Color.fromRGBO(255, 77, 148, 1.0);
+      }
+      else if (position > 0.02 * allPositions) {
+        matrixColour[row][col] = const Color.fromRGBO(255, 102, 163, 1.0);
+      }
+      else if (position > 0.015 * allPositions) {
+        matrixColour[row][col] = const Color.fromRGBO(255, 128, 179, 1.0);
+      }
+      else if (position > 0.01 * allPositions) {
+        matrixColour[row][col] = const Color.fromRGBO(255, 153, 194, 1.0);
       }
       else if (position > 0.005 * allPositions) {
-        matrixColour[row][col] = const Color.fromRGBO(40, 78, 136, 1.0);
-      }
-      else if (position > 0.004 * allPositions) {
-        matrixColour[row][col] = const Color.fromRGBO(61, 97, 153, 1.0);
-      }
-      else if (position > 0.003 * allPositions) {
-        matrixColour[row][col] = const Color.fromRGBO(85, 119, 170, 1.0);
-      }
-      else if (position > 0.002 * allPositions) {
-        matrixColour[row][col] = const Color.fromRGBO(112, 142, 187, 1.0);
+        matrixColour[row][col] = const Color.fromRGBO(255, 179, 209, 1.0);
       }
       else if (position > 0.001 * allPositions) {
-        matrixColour[row][col] = const Color.fromRGBO(142, 167, 204, 1.0);
+        matrixColour[row][col] = const Color.fromRGBO(255, 204, 224, 1.0);
+      }
+      else if (position > 0.0005 * allPositions) {
+        matrixColour[row][col] = const Color.fromRGBO(255, 230, 240, 1.0);
       }
     }
   }

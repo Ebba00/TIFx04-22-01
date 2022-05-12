@@ -20,14 +20,14 @@ var xCoordinatesNumber2 = [[], [], []];
 var yCoordinatesNumber2 = [[], [], []];
 
 List<String> playersName = ['Carl XVI Gustaf', 'Silvia Renate',
-  'Friedrich Gauss', 'Birger Jarl', 'Liam Neeson', 'Hannes Gustafsson',
+  'William Chalmers', 'Birger Jarl', 'Liam Neeson', 'Hannes Gustafsson',
   'Leonhard Euler', 'Pontus Johansson', 'Oskar Kullner', 'Ebba Molinder',
   'Victor Salomonsson', 'Elsa Beskow', 'Gustav Vasa', 'Albert Einstein',
-  'Isaac Newton', 'Marie Curie', 'Nikola Tesla', 'William Chalmers', 'Stephen Hawking', 'Grete Hermann'];
+  'Isaac Newton', 'Marie Curie', 'Nikola Tesla', 'Friedrich Gauss', 'Stephen Hawking', 'Grete Hermann'];
 List<int> playersNumber = [1, 7, 13, 20, 2, 8, 15, 21, 3, 9, 17, 24, 4, 10, 18,
   26, 5, 11, 19, 29];
-List<int> playersBirthYear = [1946, 1943, 1777, 1210, 1952, 2000, 1707, 1993,
-  1996, 2000, 2000, 1874, 1496, 1879, 1643, 1867, 1856, 1748, 1942, 1901];
+List<int> playersBirthYear = [1946, 1943, 1748, 1210, 1952, 2000, 1707, 1993,
+  1996, 2000, 2000, 1874, 1496, 1879, 1643, 1867, 1856, 1777, 1942, 1901];
 List<String> playerPositions = ['Målvakt', 'Målvakt', 'Back', 'Back', 'Forward',
   'Forward', 'Forward', 'Center', 'Forward', 'Forward', 'Center', 'Center',
   'Back', 'Back', 'Forward', 'Back', 'Back', 'Forward', 'Forward', 'Back'];
@@ -57,7 +57,7 @@ class PlayersView extends StatelessWidget {
       //print(player.heatMaps);
     }
     Team team1 = new Team('Chalmers IBK Elit', 'Pride', playersObj);
-    const String mittLag= 'Chalmers Innebandyklubb';
+    const String mittLag= 'Chalmers IBK Elit';
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children:  [
