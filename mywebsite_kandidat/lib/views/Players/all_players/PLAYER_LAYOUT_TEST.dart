@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mywebsite_kandidat/routing/route_names.dart';
 import 'package:mywebsite_kandidat/views/hannes_heatmap/Ebba_heatmap/Ebba_display.dart';
-import 'package:mywebsite_kandidat/views/hannes_heatmap/HANNES_HEATMAP.dart';
 import '../../../Dropdown/dropdown_PLAYER.dart';
-import '../../../constants/app_colors.dart';
-import '../../../constants/app_colors.dart';
-import '../../../constants/app_colors.dart';
 import '../../../constants/app_colors.dart';
 import '../../Players/all_players/playerObject.dart';
 import '../../episodes/episodes_content_desktop.dart';

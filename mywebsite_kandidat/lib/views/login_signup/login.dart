@@ -6,7 +6,7 @@ import '../../routing/route_names.dart';
 import '../../widgets/navigation_bar/navbar_logo.dart';
 import '../Players/players_view.dart';
 
-
+bool newList = false;
 class LoginView extends StatefulWidget {
   const LoginView({Key? key}) : super(key: key);
 
@@ -126,7 +126,6 @@ class LogInViewState extends State {
                             (myControllerMail.text == 'kandidat' && myControllerPassword.text == 'kandidat')
                                 ? newList = true
                                 : newList = false;
-                            print(newList);
                           },
                         ),
                       ),

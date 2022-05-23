@@ -61,7 +61,6 @@ class EpisodesContentDesktop extends State<Parent> {
 
   @override
   Widget build(BuildContext context) {
-    print(newList);
     return Row(
       mainAxisSize: MainAxisSize.max,
       children: <Widget>[

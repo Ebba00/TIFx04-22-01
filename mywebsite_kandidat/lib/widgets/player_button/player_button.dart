@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mywebsite_kandidat/views/Players/all_players/playerObject.dart';
 import '../../views/Players/all_players/PLAYER_LAYOUT_TEST.dart';
-import '../../views/Players/all_players/playerObject.dart';
 
 bool isHovering = false;
 
