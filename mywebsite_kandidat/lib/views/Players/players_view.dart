@@ -18,11 +18,11 @@ var distanceNumber2 = [300, 301, 302];
 var xCoordinatesNumber2 = [[], [], []];
 var yCoordinatesNumber2 = [[], [], []];
 
-List<String> playersName = ['Carl XVI Gustaf', 'Silvia Renate',
-  'William Chalmers', 'Birger Jarl', 'Liam Neeson', 'Hannes Gustafsson',
+List<String> playersName = ['Carl XVI Gustaf', 'Drottning Silvia',
+  'William Chalmers', 'Isaac Newton', 'Marie Curie', 'Hannes Gustafsson',
   'Leonhard Euler', 'Pontus Johansson', 'Oskar Kullner', 'Ebba Molinder',
   'Victor Salomonsson', 'Elsa Beskow', 'Gustav Vasa', 'Albert Einstein',
-  'Isaac Newton', 'Marie Curie', 'Nikola Tesla', 'Friedrich Gauss', 'Stephen Hawking', 'Grete Hermann'];
+  'Birger Jarl', 'Liam Neeson', 'Nikola Tesla', 'Friedrich Gauss', 'Stephen Hawking', 'Grete Hermann'];
 List<int> playersNumber = [1, 7, 13, 20, 2, 8, 15, 21, 3, 9, 17, 24, 4, 10, 18,
   26, 5, 11, 19, 29];
 List<int> playersBirthYear = [1946, 1943, 1748, 1210, 1952, 2000, 1707, 1993,
@@ -43,7 +43,6 @@ class PlayersView extends StatelessWidget {
   Widget build(BuildContext context) {
     for(var i = 0; i < playersName.length; i++){
       Player player = Player(playersName[i], playersNumber[i], playersBirthYear[i], playerPositions[i]);
-
       player.matches.add(Match(nameOfMatches[0], match0XCoord[i], match0YCoord[i]));
       player.matches.add(Match(nameOfMatches[1], match1XCoord[i], match1YCoord[i]));
       player.matches.add(Match(nameOfMatches[2], match2XCoord[i], match2YCoord[i]));
@@ -99,12 +98,12 @@ class PlayersView extends StatelessWidget {
                   speed: speedNumber1, heatmaps: team1.players[1].heatMaps,),
                 const SizedBox(height: 15,),
                 PlayerButton( title: team1.players[2].name, number: team1.players[2].number, birthYear: team1.players[2].birthYear,
-                  position: team1.players[2].positionInGame, picture: 'assets/playericon.jpg', dist: distanceNumber1,
+                  position: team1.players[2].positionInGame, picture: 'assets/william_chalmers.jpg', dist: distanceNumber1,
                   yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
                   speed: speedNumber1, heatmaps: team1.players[2].heatMaps,),
                 const SizedBox(height: 15,),
                 PlayerButton( title: team1.players[3].name, number: team1.players[3].number, birthYear: team1.players[3].birthYear,
-                  position: team1.players[3].positionInGame, picture: 'assets/playericon.jpg', dist: distanceNumber1,
+                  position: team1.players[3].positionInGame, picture: 'assets/isaac_newton.jpg', dist: distanceNumber1,
                   yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
                   speed: speedNumber1, heatmaps: team1.players[3].heatMaps,),
               ],),
@@ -113,7 +112,7 @@ class PlayersView extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 PlayerButton( title: team1.players[4].name, number: team1.players[4].number, birthYear: team1.players[4].birthYear,
-                  position: team1.players[4].positionInGame, picture: 'assets/playericon.jpg', dist: distanceNumber1,
+                  position: team1.players[4].positionInGame, picture: 'assets/Mariecurie.jpg', dist: distanceNumber1,
                   yCoords: yCoordinatesNumber1, acc: accNumber1, xCoords: xCoordinatesNumber1,
                   speed: speedNumber1, heatmaps: team1.players[4].heatMaps,),
                 const SizedBox(height: 15,),

@@ -24,18 +24,18 @@ class SignUpView extends StatelessWidget {
                   Align(
                     alignment: Alignment.centerLeft,
                     child:
-                      Text('VI JOBBAR PÅ DET...',
+                      Text('Skapa ditt konto och kom igång',
                         style: TextStyle(
                             fontWeight: FontWeight.w800, height: 1.15, fontSize: 30),
                         textAlign: TextAlign.left,
                       ),
                   ),
                   SizedBox(height: 30,),
-                  Text('För tillfället kan tyvärr inte nya användare skapa ett konto själva utan'
-                      ' behöver kontakta oss på INDICATE så att vi kan sätta upp ett konto åt er.'
-                      ' Är ni intresserade och vill ta del av vår tjänst, eller om ni har några som'
-                      ' helst frågor, så är det bara att ange en mailadress samt skicka iväg ett meddelande.'
-                      ' Vi svarar så fort vi kan och svaret skickas till den angivna mailadressen.',
+                  Text('Genom att skapa ett konto hos INDICATE kan du få en överblick över dina'
+                      ' lag och individuell data för varje spelare. Du som tränare kommer kunna'
+                      ' se matcher ditt lag spelat, bläddra mellan dem och se data för varje'
+                      ' enskild match. Med hjälp av INDICATE kan du utveckla ditt lag och få en'
+                      ' överblick över varje spelares utvecklingsområde respektive talanger.',
                     style: TextStyle(fontSize: 15, height: 1.7),
                     textAlign: TextAlign.left,
                   ),
@@ -57,7 +57,7 @@ class SignUpView extends StatelessWidget {
                       const SizedBox(
                         height: 20,
                       ),
-                      const Text('KONTAKTA OSS',
+                      const Text('Kom igång',
                         style: TextStyle(
                           fontSize: 25,
                           fontWeight: FontWeight.w800,
@@ -84,7 +84,7 @@ class SignUpView extends StatelessWidget {
                       ),
                       Container(
                         width: 355,
-                        height: 90,
+                        height: 50,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -92,7 +92,7 @@ class SignUpView extends StatelessWidget {
                           maxLines: 10,
                           keyboardType: TextInputType.multiline,
                           decoration: InputDecoration(
-                              hintText: 'Vad har du på hjärtat...',
+                              hintText: 'Innebandyklubb',
                               border: OutlineInputBorder(),
                         ),
                       ),),
