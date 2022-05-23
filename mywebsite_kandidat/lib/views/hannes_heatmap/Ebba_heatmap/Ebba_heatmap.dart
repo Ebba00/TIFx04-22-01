@@ -48,8 +48,6 @@ List<List<Color>> heatMap(xCoord, yCoord) {  // Matrix[11][21]
       maxValue = matrix2[yNew][xNew];
     }
   }
-  //print(matrix2);
-  //print(maxValue);
   // row = y, col = x
   for (var row = 0; row < 10; row++) {
     for (var col = 0; col < 20; col++) {

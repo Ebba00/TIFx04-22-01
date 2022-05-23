@@ -68,7 +68,9 @@ flutter:
      - assets/FloorballField.png
      - assets/floorball.jpg
      - assets/playericon.jpg
-     -  assets/ExHeatmap.PNG
+     - assets/ExHeatmap.PNG
+     - assets/william_chalmers.jpg
+     - assets/isaac_newton.jpg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
